@@ -1,0 +1,24 @@
+[
+    {
+
+        "name": "Armen",
+        "surname": "Armiryan",
+        "middlename": "Arman",
+        "gender": "female",
+        "age": "30",
+        "birthday": "20.09.2012",
+        "mobile": "098998812",
+        "email": "asd@gmail.com"
+    },
+    {
+
+        "name": "Karen",
+        "surname": "Armiryan",
+        "middlename": "Arman",
+        "gender": "female",
+        "age": "30",
+        "birthday": "20.09.2012",
+        "mobile": "098998812",
+        "email": "asd@gmail.com"
+    }
+]

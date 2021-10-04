@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Armen",
+    "surname": "Amiryan",
+    "age": "30"
+  },
+  {
+    "name": "Karen",
+    "surname": "Karapetyan",
+    "age": "20"
+  },
+  {
+    "name": "Suren",
+    "surname": "Surenyan",
+    "age": "11"
+  },
+  {
+    "name": "Hayk",
+    "surname": "Poghosyan",
+    "age": "62"
+  },
+  {
+    "name": "Tigran",
+    "surname": "Davtyan",
+    "age": "12"
+  },
+  {
+    "name": "Poghos",
+    "surname": "Petrosyan",
+    "age": "31"
+  },
+  {
+    "name": "Petros",
+    "surname": "Grigoryan",
+    "age": "5"
+  },
+  {
+    "name": "Artyom",
+    "surname": "Sargsyan",
+    "age": "72"
+  },
+  {
+    "name": "Gevorg",
+    "surname": "Mehrabyan",
+    "age": "14"
+  },
+  {
+    "name": "Aghvan",
+    "surname": "Stepanyan",
+    "age": "44"
+  },
+  {
+    "name": "Taron",
+    "surname": "Mkhitaryan",
+    "age": "37"
+  },
+  {
+    "name": "Mkhitar",
+    "surname": "Gyozalyan",
+    "age": "50"
+  },
+  {
+    "name": "Stepan",
+    "surname": "Zaqaryan",
+    "age": "22"
+  }
+]

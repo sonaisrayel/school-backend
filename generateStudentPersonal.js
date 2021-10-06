@@ -18,7 +18,4 @@ console.log(array);
 const fs = require('fs');
 
 let data = JSON.stringify(array, null, 2);
-
-
-
 fs.writeFileSync('student.json', data);

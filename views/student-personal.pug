@@ -1,5 +1,4 @@
--var ՀԱՄԱԼՍԱՐԱՆ = "ՀԱՄԱԼՍԱՐԱՆ"
--var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
+
 
 doctype html
 html(lang="en")
@@ -9,7 +8,7 @@ html(lang="en")
         meta(name="description" content="")
         meta(name="author" content="")
         
-        title= ՀԱՄԱԼՍԱՐԱՆ
+        title= title
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
@@ -82,15 +81,16 @@ html(lang="en")
                                     th Էլ․ՀԱՍՑԵ
                                     th
                             tbody.table-hover
+                             each val in student
                                 tr  
-                                    td 1
-                                    td Արմեն
-                                    td Ամիրյան
-                                    td Վազգենի
-                                    td ԱՐ
-                                    td 01․10․1977
-                                    td 099881728
-                                    td armen@gmail.com
+                                    td= val.id
+                                    td= val.name
+                                    td= val.surname
+                                    td= val.middlename
+                                    td= val.gender
+                                    td= val.birthday
+                                    td= val.mobile
+                                    td= val.email
                                     td 
                                         button(type="button" class="btn btn-primary") 
                                             i(class="fa fa-bars")
@@ -99,53 +99,7 @@ html(lang="en")
                                         button(type="button" class="btn btn-danger")
                                             i(class="fa fa-trash-o")
                                 tr
-                                    td 2
-                                    td Արմեն
-                                    td Ամիրյան
-                                    td Վազգենի
-                                    td ԱՐ
-                                    td 01․10․1977
-                                    td 099881728
-                                    td armen@gmail.com
-                                    td
-                                        button(type="button" class="btn btn-primary")
-                                            i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
-                                            i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
-                                            i(class="fa fa-trash-o")
-                                tr
-                                    td 3
-                                    td Արմեն
-                                    td Ամիրյան
-                                    td Վազգենի
-                                    td ԱՐ
-                                    td 01․10․1977
-                                    td 099881728
-                                    td armen@gmail.com
-                                    td
-                                        button(type="button" class="btn btn-primary")
-                                            i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
-                                            i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
-                                            i(class="fa fa-trash-o")
-                                tr
-                                    td 4
-                                    td Արմեն
-                                    td Ամիրյան
-                                    td Վազգենի
-                                    td ԱՐ
-                                    td 01․10․1977
-                                    td 099881728
-                                    td armen@gmail.com
-                                    td
-                                        button(type="button" class="btn btn-primary")
-                                            i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
-                                            i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
-                                            i(class="fa fa-trash-o")
+                                  
                         ul(class="pagination justify-content-end")
                             li.page-item
                                 a(href="#").page-link Previous

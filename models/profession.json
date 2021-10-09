@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "profession": "History",
+        "faculty": "Faculty of History",
+        "pay": "1000000",
+        "study_yea": "2017-2018"
+    },
+    {
+        "id": 2,
+        "profession": "Education Management",
+        "faculty": "Faculty of Chemistry",
+        "pay": "300000",
+        "study_yea": "2018-2019"
+    },
+    {
+        "id": 3,
+        "profession": "Pharmacy",
+        "faculty": "Faculty of Physics",
+        "pay": "480000",
+        "study_yea": "2011-2012"
+    },
+    {
+        "id": 4,
+        "profession": "Public Management",
+        "faculty": "Faculty of Economics and Management",
+        "pay": "250000",
+        "study_yea": "2020-2021"
+    },
+    {
+        "id": 5,
+        "profession": "English Language and Literature",
+        "faculty": "Faculty of Mathematics and Mechanics",
+        "pay": "560000",
+        "study_yea": "2005-2006"
+    },
+    {
+        "id": 6,
+        "profession": "Sociology",
+        "faculty": "Faculty of Biology",
+        "pay": "600000",
+        "study_yea": "2001-2002"
+    },
+    {
+        "id": 7,
+        "profession": "Radiophysics and Electronics",
+        "faculty": "Faculty of Geography and Geology",
+        "pay": "410000",
+        "study_yea": "2002-2003"
+    },
+    {
+        "id": 8,
+        "profession": "Informatics and Applied Mathematics",
+        "faculty": "Faculty of Law",
+        "pay": "550000",
+        "study_yea": "2008-2009"
+    },
+    {
+        "id": 9,
+        "profession": "Psychology",
+        "faculty": "Faculty of Russian Philology",
+        "pay": "1200000",
+        "study_yea": "2015-2016"
+    },
+    {
+        "id": 10,
+        "profession": "Journalism",
+        "faculty": "Faculty of Oriental Studies",
+        "pay": "200000",
+        "study_yea": "2016-2017"
+    }
+]

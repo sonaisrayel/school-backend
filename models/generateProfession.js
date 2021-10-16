@@ -20,3 +20,4 @@ for (let i = 0; i < profession.length; i++) {
 }
 
 fs.writeFileSync("models/profession.json", JSON.stringify(array))
+

@@ -92,11 +92,11 @@ html(lang="en")
                                     td= val.mobile
                                     td= val.email
                                     td 
-                                        button(type="button" class="btn btn-primary") 
+                                        a(type="button" class="btn btn-primary" href="/students/" + val.id) 
                                             i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
+                                        a(type="button" class="btn btn-info" href="/students/" + val.id)
                                             i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
+                                        a(type="button" class="btn btn-danger" href="/students/" + val.id)
                                             i(class="fa fa-trash-o")
                                 tr
                                   

@@ -1,25 +1,22 @@
 const express = require('express')
 const app = express();
 require('dotenv').config()
-const fs = require('fs');
 const path = require('path')
-const pug = require('pug');
 const port = process.env.port
-const student = require("./models/student-personal.json")
+const bodyParser = require('body-parser')
 const generateProfession = require('./models/generateProfession')
-const profession = require('./models/profession.json')
+const { getProfessions } = require("./controllers/profession-controller")
+const { getStudents, getStudent } = require("./controllers/student-controller");
 
+app.use(bodyParser.json())
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
-app.get('/student-personal', (req, res) => {
-  res.render('student-personal', { student: student })
-})
+app.get('/students', getStudents)
+app.get('/students/:id', getStudent)
 
-app.get('/profession', (req, res) => {
-  res.render('profession', { profession: profession })
-})
+app.get('/professions', getProfessions)
 
 app.get('/generate', (req, res) => {
   generateProfession

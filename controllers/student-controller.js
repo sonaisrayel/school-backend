@@ -5,12 +5,10 @@ async function getStudents(req, res) {
 }
 
 async function getStudent(req, res) {
-
     const { id } = req.params;
     const newStudent = student.filter((stu) => {
         return stu.id == id
     })
-
     res.render('student', { student: newStudent })    
 }
 

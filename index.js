@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const generateProfession = require('./models/generateProfession')
 const { getProfessions, getProfession } = require("./controllers/profession-controller")
 const { getStudents, getStudent } = require("./controllers/student-controller")
-const { getFacultys, getFaculty } = require("./controllers/faculty-controller");
+const { getFaculty, getFaculties } = require("./controllers/faculty-controller");
 
 
 app.use(bodyParser.json())
@@ -18,8 +18,8 @@ app.set("views", path.join(__dirname, "views"));
 app.get('/students', getStudents)
 app.get('/students/:id', getStudent)
 
-app.get('/facultys', getFacultys)
-app.get('/facultys/:id', getFaculty)
+app.get('/faculties', getFaculties)
+app.get('/faculties/:id', getFaculty)
 
 app.get('/professions', getProfessions)
 app.get('/professions/:id', getProfession)

@@ -11,7 +11,6 @@ async function getStudent(req, res) {
         return stu.id == id
     })
 
-    console.log();
     res.render('student', { student: newStudent })    
 }
 

@@ -1,7 +1,7 @@
 const faculty = require("../models/profession.json");
 
-async function getFacultys(req, res) {
-    res.render('profession', { faculty: faculty })
+async function getFaculties(req, res) {
+    res.render('faculty',{ faculty:faculty });
 }
 
 async function getFaculty(req, res) {
@@ -9,10 +9,12 @@ async function getFaculty(req, res) {
     const newFaculty = faculty.filter((stu) => {
         return facul.id == id
     })
-    res.render('profession', { faculty: newFaculty })
+
+    
+    res.render('faculty', { faculty: newFaculty })
 }
 
 module.exports = {
-    getFacultys,
+    getFaculties,
     getFaculty
 }

@@ -10,6 +10,8 @@ async function getStudent(req, res) {
         return stu.id == id
     })
     res.render('student-personal', { student: newStudent })
+
+    
 }
 
 module.exports = {

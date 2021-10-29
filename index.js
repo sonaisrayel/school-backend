@@ -5,7 +5,7 @@ const path = require('path')
 const port = process.env.port
 const bodyParser = require('body-parser')
 const generateProfession = require('./models/generateProfession')
-const { getProfessions } = require("./controllers/profession-controller")
+const { getProfessions, getProfession } = require("./controllers/profession-controller")
 const { getStudents, getStudent } = require("./controllers/student-controller");
 
 app.use(bodyParser.json())
@@ -17,6 +17,7 @@ app.get('/students', getStudents)
 app.get('/students/:id', getStudent)
 
 app.get('/professions', getProfessions)
+app.get('/professions/:id', getProfession)
 
 app.get('/generate', (req, res) => {
   generateProfession

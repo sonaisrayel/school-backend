@@ -1,0 +1,19 @@
+img{
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    margin: 45px;
+}
+.a{
+    display: inline-block;
+    margin: 60px;
+}
+button{
+    width: 80px;
+    height: 30px;
+}
+.button{
+    display: inline-block;
+    margin-left: 1165px;
+    margin-top: 245px;
+}

@@ -1,9 +1,18 @@
-
-
 const profession = require('../models/profession.json');
-async function getProfessions(req, res)  {
+
+async function getProfessions(req, res) {
     res.render('profession', { profession: profession })
-  }
-  module.exports={
-      getProfessions
-  }
+}
+
+async function getProfession(req, res) {
+    const { id } = req.params;
+    const newProfession = profession.filter((pro) => {
+        return pro.id == id
+    })
+    res.render('profession', { profession: newProfession })
+}
+
+module.exports = {
+    getProfessions,
+    getProfession
+}

@@ -5,13 +5,14 @@ async function getStudents(req, res) {
 }
 
 async function getStudent(req, res) {
+
     const { id } = req.params;
     const newStudent = student.filter((stu) => {
         return stu.id == id
     })
-    res.render('student-personal', { student: newStudent })
 
-    
+    console.log();
+    res.render('student', { student: newStudent })    
 }
 
 module.exports = {

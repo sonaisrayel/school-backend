@@ -1,4 +1,4 @@
--var title = "ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ"
+
 
 doctype html
 html(lang="en")
@@ -7,7 +7,6 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet", href="student-controller.css")
         
         title= title
         
@@ -23,7 +22,7 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid
+        .container-fluid  
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
@@ -65,25 +64,51 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-        img(src="" alt="")
-        .a
-            p ԱՆՈՒՆ
-            p ԱԶԳԱՆՈՒՆ
-            p ՀԱՅՐԱՆՈՒՆ
-            p ՍԵՌ
-            p ԾՆ․ԱՄՍԱԹԻՎ
-            p ՀԵՌԱԽՈՍ
-            p Էլ․ՀԱՍՑԵ
-        .button
-            button(type="button" class="btn btn-primary" href="#") View
-            button(type="button" class="btn btn-primary" href="#") Edit
-        .b
-            each val in student
-                p= val.id
-                p= val.name
-                p= val.surname
-                p= val.middlename
-                p= val.gender
-                p= val.birthday
-                p= val.mobile
-                p= val.email  
+                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
+                    h3 ՈՒՍԱՆՈՂՆԵՐԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
+                    a(class='button' href="/students/list") ԱՎԵԼԱՑՆԵԼ ՈՒՍԱՆՈՂ    
+                    <br/>
+                    .table-responsive
+                        table(class="table table-bordered ")
+                            thead.thead-dark
+                                tr
+                                    th #
+                                    th ԱՆՈՒՆ
+                                    th ԱԶԳԱՆՈՒՆ
+                                    th ՀԱՅՐԱՆՈՒՆ
+                                    th ՍԵՌ
+                                    th ԾՆ․ԱՄՍԱԹԻՎ
+                                    th ՀԵՌԱԽՈՍ
+                                    th Էլ․ՀԱՍՑԵ
+                                    th
+                            tbody.table-hover
+                             each val in student
+                                tr  
+                                    td= val.id
+                                    td= val.name
+                                    td= val.surname
+                                    td= val.middlename
+                                    td= val.gender
+                                    td= val.birthday
+                                    td= val.mobile
+                                    td= val.email
+                                    td 
+                                        a(type="button" class="btn btn-primary" href="/students/" + val.id) 
+                                            i(class="fa fa-bars")
+                                        a(type="button" class="btn btn-info" href="/students/" + val.id)
+                                            i(class="fa fa-edit")
+                                        a(type="button" class="btn btn-danger" href="/students/" + val.id)
+                                            i(class="fa fa-trash-o")
+                                tr
+                                  
+                        ul(class="pagination justify-content-end")
+                            li.page-item
+                                a(href="#").page-link Previous
+                            li.page-item
+                                a(href="#").page-link 1
+                            li.page-item
+                                a(href="#").page-link 2
+                            li.page-item
+                                a(href="#").page-link 3
+                            li.page-item
+                                a(href="#").page-link Next

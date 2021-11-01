@@ -63,25 +63,44 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-        img(src="" alt="")
-        .a
-            p ԱՆՈՒՆ
-            p ԱԶԳԱՆՈՒՆ
-            p ՀԱՅՐԱՆՈՒՆ
-            p ՍԵՌ
-            p ԾՆ․ԱՄՍԱԹԻՎ
-            p ՀԵՌԱԽՈՍ
-            p Էլ․ՀԱՍՑԵ
-        .button
-            button(type="button" class="btn btn-primary" href="#") View
-            button(type="button" class="btn btn-primary" href="#") Edit
-        .b
-            each val in student
-                p= val.id
-                p= val.name
-                p= val.surname
-                p= val.middlename
-                p= val.gender
-                p= val.birthday
-                p= val.mobile
-                p= val.email  
+                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
+                    h3 ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
+                    <br/>        
+                    img(src="" alt="")
+                    table 
+                        thead
+                            tr
+                                th #
+                                each val in student
+                                    td= val.id
+                            tr
+                                th ԱՆՈՒՆ
+                                each val in student
+                                    td= val.name
+                            tr
+                                th ԱԶԳԱՆՈՒՆ
+                                each val in student
+                                    td= val.surname
+                            tr
+                                th ՀԱՅՐԱՆՈՒՆ
+                                each val in student
+                                    td= val.middlename
+                            tr
+                                th ՍԵՌ
+                                each val in student
+                                    td= val.gender
+                            tr
+                                th ԾՆ․ԱՄՍԱԹԻՎ
+                                each val in student
+                                    td= val.birthday
+                            tr
+                                th ՀԵՌԱԽՈՍ
+                                each val in student
+                                    td= val.mobile
+                            tr
+                                th Էլ․ՀԱՍՑԵ
+                                each val in student                        
+                                    td= val.email
+                    .button
+                        button(type="button" href="#") View
+                        button(type="button" href="#") Edit 

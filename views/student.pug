@@ -65,42 +65,64 @@ html(lang="en")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
                     h3 ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
-                    <br/>        
-                    img(src="" alt="")
-                    table 
-                        thead
-                            tr
-                                th #
+                    <br/>
+                    .div_1
+                        .a   
+                            img(src="" alt="")
+                            br
+                            p.p1 # 
                                 each val in student
-                                    td= val.id
-                            tr
-                                th ԱՆՈՒՆ
+                                    b=val.id 
+                            br     
+                            p.p2
                                 each val in student
-                                    td= val.name
-                            tr
-                                th ԱԶԳԱՆՈՒՆ
+                                    b= val.name
                                 each val in student
-                                    td= val.surname
-                            tr
-                                th ՀԱՅՐԱՆՈՒՆ
-                                each val in student
-                                    td= val.middlename
-                            tr
-                                th ՍԵՌ
-                                each val in student
-                                    td= val.gender
-                            tr
-                                th ԾՆ․ԱՄՍԱԹԻՎ
-                                each val in student
-                                    td= val.birthday
-                            tr
-                                th ՀԵՌԱԽՈՍ
-                                each val in student
-                                    td= val.mobile
-                            tr
-                                th Էլ․ՀԱՍՑԵ
-                                each val in student                        
-                                    td= val.email
+                                    b= val.surname 
+                        .b
+                            table                           
+                                tr
+                                    th ՀԱՅՐԱՆՈՒՆ
+                                    each val in student
+                                        td= val.middlename
+                                tr
+                                    th ՍԵՌ
+                                    each val in student
+                                        td= val.gender
+                                tr
+                                    th ԾՆ․ԱՄՍԱԹԻՎ
+                                    each val in student
+                                        td= val.birthday
+                                tr
+                                    th ՀԵՌԱԽՈՍ
+                                    each val in student
+                                        td= val.mobile
+                                tr
+                                    th Էլ․ՀԱՍՑԵ
+                                    each val in student                        
+                                        td= val.email
+                    hr
+                    br
+                    .div_2
+                        h3 About Me
+                        hr 
+                        p
+                            label(for="")
+                                i(class="fa fa-book") Education
+                            input(type="text" class="input")
+                        p
+                            label(for="") 
+                                i(class="fa fa-map-marker") Location
+                            input(type="text" class="input")
+                        p
+                            label(for="")
+                                i(class="fa fa-pencil") Skills 
+                            input(type="text")
+                        p
+                            i(class="fa fa-file-text-o") Notes
+                            input(type="text")                    
+                    
+                    
                     .button
                         button(type="button" href="#") View
                         button(type="button" href="#") Edit 

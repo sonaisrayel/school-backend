@@ -24,6 +24,7 @@ app.get('/facultys/:id', getFaculty)
 app.get('/professions', getProfessions)
 app.get('/professions/:id', getProfession)
 
+
 app.get('/generate', (req, res) => {
   generateProfession
 })

@@ -22,6 +22,9 @@ app.use(express.static(__dirname + '/views'));
 //routes
 app.get('/students', getStudents)
 app.get('/students/list',getStudentList)
+app.get('/students/create',(req,res) =>{
+  res.render('student-create')
+})
 app.get('/students/:id', getStudent)
 app.post('/students',(req,res)=>{
   console.log(req.body);

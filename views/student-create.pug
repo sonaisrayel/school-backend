@@ -1,5 +1,3 @@
-
-
 doctype html
 html(lang="en")
     head
@@ -7,14 +5,13 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/student-create.css"  type='text/css')
-        
+        link(rel="stylesheet" href="/assets/css/student-create.css"  type='text/css')        
         title= title
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-        link(rel="stylesheet" href="dashboard.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
+        
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
             a(class="navbar-brand col-sm-3 col-md-2 mr-0" href="#") ՀԱՄԱԼՍԱՐԱՆ
@@ -66,51 +63,55 @@ html(lang="en")
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    div
-                        h3 ՈՒՍԱՆՈՂՆԵՐԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
-                        a(class='button' href="/students/create") ԱՎԵԼԱՑՆԵԼ ՈՒՍԱՆՈՂ    
-                    <br/>
-                    .table-responsive
-                        table(class="table table-bordered ")
-                            thead.thead-dark
-                                tr
-                                    th #
-                                    th ԱՆՈՒՆ
-                                    th ԱԶԳԱՆՈՒՆ
-                                    th ՀԱՅՐԱՆՈՒՆ
-                                    th ՍԵՌ
-                                    th ԾՆ․ԱՄՍԱԹԻՎ
-                                    th ՀԵՌԱԽՈՍ
-                                    th Էլ․ՀԱՍՑԵ
-                                    th
-                            tbody.table-hover
-                             each val in student
-                                tr  
-                                    td= val.id
-                                    td= val.name
-                                    td= val.surname
-                                    td= val.middlename
-                                    td= val.gender
-                                    td= val.birthday
-                                    td= val.mobile
-                                    td= val.email
-                                    td 
-                                        a(type="button" class="btn btn-primary" href="/students/" + val.id) 
-                                            i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="/students/" + val.id)
-                                            i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="/students/" + val.id)
-                                            i(class="fa fa-trash-o")
-                                tr
-                                  
-                        ul(class="pagination justify-content-end")
-                            li.page-item
-                                a(href="#").page-link Previous
-                            li.page-item
-                                a(href="#").page-link 1
-                            li.page-item
-                                a(href="#").page-link 2
-                            li.page-item
-                                a(href="#").page-link 3
-                            li.page-item
-                                a(href="#").page-link Next
+                    .div_1
+                        h4 ԱՎԵԼԱՑՆԵԼ
+                        h2 ՈՒՍԱՆՈՂ
+                        hr
+                    .form
+                        .div1
+                            label(for='') #
+                        .div2_1
+                            input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԱՆՈՒՆ
+                        .div2_2
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԱԶԳԱՆՈՒՆ
+                        .div2_3
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ՀԱՅՐԱՆՈՒՆ
+                        .div2_4
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ՍԵՌ
+                        .div2_5
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԾՆ․ԱՄՍԱԹԻՎ
+                        .div2_6
+                        input.input(type='number')
+                    .form
+                        .div1
+                        label(for='') ՀԵՌԱԽՈՍ
+                        .div2_7
+                        input.input(type='phone')
+                    .form
+                        .div1
+                        label(for='') Էլ․ՀԱՍՑԵ
+                        .div2_8
+                        input.input(type='email')
+                    br
+                    .div_2
+                        button(type='button' href='#') ԱՎԵԼԱՑՆԵԼ
+                    hr
+                    a(href="/students") Վերադառնալ ցուցակին
+
+
+                                           

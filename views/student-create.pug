@@ -1,5 +1,3 @@
--var title = "ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ"
-
 doctype html
 html(lang="en")
     head
@@ -7,12 +5,13 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/student.css"  type='text/css')        
+        link(rel="stylesheet" href="/assets/css/student-create.css"  type='text/css')        
         title= title
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
+        
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
             a(class="navbar-brand col-sm-3 col-md-2 mr-0" href="#") ՀԱՄԱԼՍԱՐԱՆ
@@ -21,7 +20,7 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid
+        .container-fluid  
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
@@ -43,7 +42,7 @@ html(lang="en")
                                     span(data-feather="shopping-cart")
                                     | ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ    
                             li.nav-item
-                                a(href="/students").nav-link
+                                a(href="./student.html").nav-link
                                     span(data-feather="shopping-cart")
                                     | ՈՒՍԱՆՈՂՆԵՐ
                         h6(class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted")
@@ -64,65 +63,55 @@ html(lang="en")
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    h3 ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
-                    <br/>
                     .div_1
-                        .a   
-                            img(src="" alt="")
-                            br
-                            p.p1 # 
-                                each val in student
-                                    b=val.id 
-                            br     
-                            p.p2
-                                each val in student
-                                    b= val.name
-                                each val in student
-                                    b= val.surname 
-                        .b
-                            table                           
-                                tr
-                                    th ՀԱՅՐԱՆՈՒՆ
-                                    each val in student
-                                        td= val.middlename
-                                tr
-                                    th ՍԵՌ
-                                    each val in student
-                                        td= val.gender
-                                tr
-                                    th ԾՆ․ԱՄՍԱԹԻՎ
-                                    each val in student
-                                        td= val.birthday
-                                tr
-                                    th ՀԵՌԱԽՈՍ
-                                    each val in student
-                                        td= val.mobile
-                                tr
-                                    th Էլ․ՀԱՍՑԵ
-                                    each val in student                        
-                                        td= val.email
-                    hr
+                        h4 ԱՎԵԼԱՑՆԵԼ
+                        h2 ՈՒՍԱՆՈՂ
+                        hr
+                    .form
+                        .div1
+                            label(for='') #
+                        .div2_1
+                            input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԱՆՈՒՆ
+                        .div2_2
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԱԶԳԱՆՈՒՆ
+                        .div2_3
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ՀԱՅՐԱՆՈՒՆ
+                        .div2_4
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ՍԵՌ
+                        .div2_5
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԾՆ․ԱՄՍԱԹԻՎ
+                        .div2_6
+                        input.input(type='number')
+                    .form
+                        .div1
+                        label(for='') ՀԵՌԱԽՈՍ
+                        .div2_7
+                        input.input(type='phone')
+                    .form
+                        .div1
+                        label(for='') Էլ․ՀԱՍՑԵ
+                        .div2_8
+                        input.input(type='email')
                     br
                     .div_2
-                        h3 About Me
-                        hr 
-                        p
-                            label(for="")
-                                i(class="fa fa-book") Education
-                            input(type="text" class="input")
-                        p
-                            label(for="") 
-                                i(class="fa fa-map-marker") Location
-                            input(type="text" class="input")
-                        p
-                            label(for="")
-                                i(class="fa fa-pencil") Skills 
-                            input(type="text")
-                        p
-                            i(class="fa fa-file-text-o") Notes
-                            input(type="text")                    
-                    
-                    
-                    .button
-                        button(type="button" href="#") View
-                        button(type="button" href="#") Edit 
+                        button(type='button' href='#') ԱՎԵԼԱՑՆԵԼ
+                    hr
+                    a(href="/students") Վերադառնալ ցուցակին
+
+
+                                           

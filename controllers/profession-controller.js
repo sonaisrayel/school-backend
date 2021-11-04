@@ -1,8 +1,11 @@
-
-const student = require("../models/student-personal.json");
+const profession = require('../models/profession.json');
 
 async function getProfessions(req, res) {
     res.render('profession', { profession: profession })
+}
+
+async function getProfessions(req, res) {
+    res.render('profession-list', { profession: profession })
 }
 
 async function getProfession(req, res) {
@@ -12,7 +15,6 @@ async function getProfession(req, res) {
     })
     res.render('profession', { profession: newProfession })
 }
-
 
 module.exports = {
     getProfessions,

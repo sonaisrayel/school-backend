@@ -1,0 +1,47 @@
+img{
+  width: 150px;
+  height: 150px;
+}
+
+.div_1{
+    display: flex;
+    margin-left: 100px;
+}
+
+.p1{
+    margin-left: 60px;
+    display: inline;
+}
+
+.p2{
+    margin-left: 15px;
+    display: inline;
+}
+
+table{
+    margin-left: 150px; 
+}
+
+td,th{
+    padding:  7px;
+}
+
+input{
+    width: 260px;
+    display: block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+button{
+    display: inline-block;
+    padding: 5px 20px;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.button{
+    margin-left: 85%;
+}

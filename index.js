@@ -4,7 +4,7 @@ require('dotenv').config()
 const path = require('path')
 const port = process.env.port
 const bodyParser = require('body-parser')
-onst generateProfession = require('./models/generateProfession')
+const generateProfession = require('./models/generateProfession')
 const { getProfessions, getProfession } = require("./controllers/profession-controller");
 const { getStudents, getStudent,getStudentList } = require("./controllers/student-controller");
 const { getFaculty, getFaculties } = require("./controllers/faculty-controller");
@@ -16,7 +16,6 @@ app.use(bodyParser.json())
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(__dirname + '/views'));
-
 
 
 //routes

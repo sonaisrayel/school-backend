@@ -31,6 +31,9 @@ app.post('/students',(req,res)=>{
 
 app.get('/faculties', getFaculties)
 app.get('/faculties/:id', getFaculty)
+app.get('/faculty/create',(req, res) =>{
+  res.render('faculty-create')
+})
 
 app.get('/professions', getProfessions)
 app.get('/professions/:id', getProfession)

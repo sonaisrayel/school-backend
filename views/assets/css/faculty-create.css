@@ -1,0 +1,52 @@
+input{
+    border: solid 1px rgb(175, 173, 173);
+    border-radius: 5px;
+    width: 250px;
+}
+
+.form{
+    margin-top: 15px;
+    margin-left: 300px;
+}
+
+.div1{
+    display: inline;
+}
+
+.div2_1{
+    margin-top: 50px;
+    display: inline-block;
+    padding-left: 50px;
+}
+.div2_2{
+    display: inline-block;
+    padding-left: 86px;
+}
+.div2_3{
+    display: inline-block;
+    padding-left: 86px;
+}
+.div2_4{
+    display: inline-block;
+    padding-left: 48px;
+}
+
+button{
+    padding: 5px 20px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.div_2{
+    margin-bottom: 50px;
+    margin-left: 480px;
+}
+
+h3{
+    display: inline-flex;
+}
+.het{
+    color: black;
+}
+#znak{
+    margin-left: 40px;
+}

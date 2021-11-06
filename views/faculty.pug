@@ -85,12 +85,13 @@ html(lang="en")
                                     th ՈՒՍՄԱՆ Ձև
                                     th
                             tbody.table-hover
+                             each val in faculty
                                 tr  
-                                    td 1
-                                    td Բնական գիտություններ
-                                    td Ինֆորմատիկա և կիրառական մաթեմատիկա
-                                    td I, II, III, IV
-                                    td Առկա
+                                    td= val.id
+                                    td= val.profession
+                                    td= val.faculty
+                                    td= val.study_year
+                                    td= val.pay
                                     td 
                                         button(type="button" class="btn btn-primary") 
                                             i(class="fa fa-bars")
@@ -98,46 +99,7 @@ html(lang="en")
                                             i(class="fa fa-edit")
                                         button(type="button" class="btn btn-danger")
                                             i(class="fa fa-trash-o")
-                                tr
-                                    td 2
-                                    td Հումանիտար գիտություններ
-                                    td Օտար լեզու և գրականություն
-                                    td I, II, III, IV
-                                    td Առկա
-                                    td
-                                        button(type="button" class="btn btn-primary")
-                                            i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
-                                            i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
-                                            i(class="fa fa-trash-o")
-                                tr
-                                    td 3
-                                    td Տնտեսագիտություն
-                                    td Ֆինանսներ
-                                    td I, II, III, IV
-                                    td Առկա
-                                    td
-                                        button(type="button" class="btn btn-primary")
-                                            i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
-                                            i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
-                                            i(class="fa fa-trash-o")
-                                tr
-                                    td 4
-                                    td Կիրառական Արվեստ
-                                    td Դիզայն և Դեկորատիվ կիրառական արվեստ
-                                    td I, II, III, IV
-                                    td Առկա
-
-                                    td
-                                        button(type="button" class="btn btn-primary")
-                                            i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
-                                            i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
-                                            i(class="fa fa-trash-o")
+                               
                         ul(class="pagination justify-content-end")
                             li.page-item
                                 a(href="#").page-link Previous

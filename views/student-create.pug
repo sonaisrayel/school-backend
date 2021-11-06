@@ -62,54 +62,49 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
+                form(action="/students" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
                     .div_1
                         h4 ԱՎԵԼԱՑՆԵԼ
                         h2 ՈՒՍԱՆՈՂ
-                        hr
-                    .form
-                        .div1
-                            label(for='') #
-                        .div2_1
-                            input.input(type='text' class='create-input')
+                        hr                    
                     .form
                         .div1
                         label(for='') ԱՆՈՒՆ
                         .div2_2
-                        input.input(type='text' class='create-input')
+                        input.input(type='text'  name = "name" class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
                         .div2_3
-                        input.input(type='text' class='create-input')
+                        input.input(type='text' name="surname"  class='create-input')
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
                         .div2_4
-                        input.input(type='text' class='create-input')
+                        input.input(type='text' name="middle" class='create-input')
                     .form
                         .div1
                         label(for='') ՍԵՌ
                         .div2_5
-                        input.input(type='text' class='create-input')
+                        input.input(type='text' name="gender" class='create-input')
                     .form
                         .div1
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
                         .div2_6
-                        input.input(type='number' class='create-input')
+                        input.input(type='number' name="dates" class='create-input')
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
                         .div2_7
-                        input.input(type='phone' class='create-input')
+                        input.input(type='phone' name="phone" class='create-input')
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_8
-                        input.input(type='email' class='create-input')
+                        input.input(type='email' name="email" class='create-input')
                     br
                     .div3
-                        button(type='button' class='create-button' href='#') ԱՎԵԼԱՑՆԵԼ
+                        button(type='submit' class='create-button' ) ԱՎԵԼԱՑՆԵԼ
                     hr
                     a(href="/students") Վերադառնալ ցուցակին
 

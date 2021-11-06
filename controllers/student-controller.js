@@ -11,16 +11,18 @@ async function getStudent(req, res) {
     const newStudent = student.filter((stu) => {
         return stu.id == id
     });
+    
     res.render('student', { student: newStudent })    
 }
 
-async function getStudentList(req,res){
-    console.log("bubu");
-
+async function createStudent(req,res){
+    res.render('student-create')
 }
+ 
 
 module.exports = {
     getStudents,
     getStudent,
-    getStudentList
+    createStudent
+    
 }

@@ -10,11 +10,13 @@ html(lang="en")
         meta(name="author" content="")
         
         title= ՀԱՄԱԼՍԱՐԱՆ
-        
+
+        link(rel="stylesheet" href="/assets/css/faculty.css" type="text/css")
+       
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-        link(rel="stylesheet" href="dashboard.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
+        
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
             a(class="navbar-brand col-sm-3 col-md-2 mr-0" href="#") ՀԱՄԱԼՍԱՐԱՆ
@@ -67,6 +69,10 @@ html(lang="en")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
                     h3 ՖԱԿՈՒԼՏԵՏ
+                    <br/>
+                    a(class='button' href="/faculty/create" id="kochak") ԱՎԵԼԱՑՆԵԼ ՈՒՍԱՆՈՂ
+                    <br/>
+                    <br/>
                     <br/>
                     .table-responsive
                         table(class="table table-bordered ")

@@ -22,7 +22,10 @@ app.use(express.urlencoded({
 app.get('/students', getStudents);
 app.get('/students/create', createStudentView);
 app.get('/students/:id', getStudent);
-app.post('/students',createStudent)
+app.post('/students',createStudent);
+
+
+//teacher 
 
 app.get('/faculties', getFaculties)
 app.get('/faculties/:id', getFaculty)

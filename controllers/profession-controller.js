@@ -12,7 +12,6 @@ async function getProfession(req, res) {
     })
     res.render('profession', { profession: newProfession })
 }
-
 module.exports = {
     getProfessions,
     getProfession

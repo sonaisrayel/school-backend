@@ -4,7 +4,7 @@ require('dotenv').config()
 const path = require('path')
 const port = process.env.port
 const bodyParser = require('body-parser')
-onst generateProfession = require('./models/generateProfession')
+const generateProfession = require('./models/generateProfession')
 const { getProfessions } = require("./controllers/profession-controller")
 const { getStudents, getStudent } = require("./controllers/student-controller")
 const { getFacultys, getFaculty } = require("./controllers/faculty-controller")

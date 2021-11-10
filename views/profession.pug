@@ -87,12 +87,15 @@ html(lang="en")
                                     td=val.study_yea
                                     td=val.pay
                                     td 
-                                        button(type="button" class="btn btn-primary") 
+
+                                        a(type="button" class="btn btn-primary" href="/professions/" + val.id) 
                                             i(class="fa fa-bars")
-                                        button(type="button" class="btn btn-info")
+                                        a(type="button" class="btn btn-info" href="/professions/" + val.id)
                                             i(class="fa fa-edit")
-                                        button(type="button" class="btn btn-danger")
-                                            i(class="fa fa-trash-o")                               
+                                        a(type="button" class="btn btn-danger" href="/professions/" + val.id)
+                                            i(class="fa fa-trash-o")
+                                    tr
+                                                                      
                         ul(class="pagination justify-content-end")
                             li.page-item
                                 a(href="#").page-link Previous

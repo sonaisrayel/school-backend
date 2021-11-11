@@ -69,44 +69,43 @@ html(lang="en")
                         hr
                     .form
                         .div1
-                            label(for='') #
-                        .div2_1
-                            input.input(type='text' class='create-input')
-                    .form
-                        .div1
                         label(for='') ԱՆՈՒՆ
-                        .div2_2
-                        input.input(type='text' class='create-input')
+                        .div2_1
+                        input.input(type='text' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
-                        .div2_3
-                        input.input(type='text' class='create-input')
+                        .div2_2
+                        input.input(type='text' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
-                        .div2_4
-                        input.input(type='text' class='create-input')
+                        .div2_3
+                        input.input(type='text' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՍԵՌ
-                        .div2_5
-                        input.input(type='text' class='create-input')
+                        .div2_4
+                        input.input(type='radio' name='gen' id='female')
+                        label(for="female")  Իգական
+                        input.input(type='radio' name='gen' id='male')
+                        label(for="male")  Արական
+
                     .form
                         .div1
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
-                        .div2_6
-                        input.input(type='number' class='create-input')
+                        .div2_5
+                        input.input(type='text' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
-                        .div2_7
-                        input.input(type='phone' class='create-input')
+                        .div2_6
+                        input.input(type='tel' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
-                        .div2_8
-                        input.input(type='email' class='create-input')
+                        .div2_7
+                        input.input(type='email' autocomplete='off' class='create-input')
                     br
                     .div3
                         button(type='button' class='create-button' href='#') ԱՎԵԼԱՑՆԵԼ

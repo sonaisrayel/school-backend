@@ -62,10 +62,11 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
+                form(action="/students" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
                     .div_1
                         h4 ԱՎԵԼԱՑՆԵԼ
                         h2 ՈՒՍԱՆՈՂ
+
                         hr
                     .form
                         .div1
@@ -106,9 +107,11 @@ html(lang="en")
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
                         input.input(type='email' autocomplete='off' class='create-input')
+
+
                     br
                     .div3
-                        button(type='button' class='create-button' href='#') ԱՎԵԼԱՑՆԵԼ
+                        button(type='submit' class='create-button' ) ԱՎԵԼԱՑՆԵԼ
                     hr
                     a(href="/students") Վերադառնալ ցուցակին
 

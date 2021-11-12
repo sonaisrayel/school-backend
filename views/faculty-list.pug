@@ -35,21 +35,21 @@ html(lang="en")
                                     span(data-feather="home")
                                     | ՑՈՒՑԱԿ  
                             li.nav-item
-                                a(href="profession.html").nav-link
+                                a(href="/professions").nav-link
                                     span(data-feather="file") 
                                     | ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ
                             li.nav-item
-                                a(href="#").nav-link
+                                a(href="/faculties").nav-link
                                     span(data-feather="shopping-cart")
-                                    | ՖԱԿՈՒԼՏԵՏ
+                                    | ՖԱԿՈՒԼՏԵՏ  
                             li.nav-item
                                 a(href="/students").nav-link
                                     span(data-feather="shopping-cart")
-                                    | ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ    
-                            li.nav-item
-                                a(href="./student.html").nav-link
-                                    span(data-feather="shopping-cart")
                                     | ՈՒՍԱՆՈՂՆԵՐ
+                            li.nav-item
+                                a(href="/teachers").nav-link
+                                    span(data-feather="shopping-cart")
+                                    | ԴԱՍԱԽՈՍՆԵՐ
                         h6(class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted")
                             span= ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ
                             a(class="d-flex align-items-center text-muted" href="#")
@@ -70,7 +70,7 @@ html(lang="en")
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
                     div 
                         h3(class="list-fac") ՖԱԿՈՒԼՏԵՏ
-                        a(class='craete-button' href="/faculty/create" id="kochak") ԱՎԵԼԱՑՆԵԼ ՈՒՍԱՆՈՂ
+                        a(class='craete-button' href="/faculty/create" id="kochak") ԱՎԵԼԱՑՆԵԼ ՖԱԿՈՒԼՏԵՏ
                     <br/>
                     .table-responsive
                         table(class="table table-bordered ")
@@ -93,9 +93,9 @@ html(lang="en")
                                     td 
                                         a(type="button" class="btn btn-primary" href="/faculties/" + val.id) 
                                             i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="/faculties/" + val.id)
+                                        a(type="button" class="btn btn-info" href="#" + val.id)
                                             i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="/faculties/" + val.id)
+                                        a(type="button" class="btn btn-danger" href="#" + val.id)
                                             i(class="fa fa-trash-o")
                                
                         ul(class="pagination justify-content-end")

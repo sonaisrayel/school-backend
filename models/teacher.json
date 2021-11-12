@@ -1,0 +1,47 @@
+[
+    {
+
+        "id":1,
+        "name": "Karine",
+        "surname": "Abgaryan",
+        "middlename": "Hakob",
+        "gender": "female",
+        "age": "53",
+        "birthday": "08.05.1968",
+        "mobile": "077458578",
+        "email": "teach@gmail.com"
+    },
+    {
+        "id":2,
+        "name": "Exiazar",
+        "surname": "Exiazaryan",
+        "middlename": "Exishe",
+        "gender": "male",
+        "age": "53",
+        "birthday": "08.05.1968",
+        "mobile": "077458578",
+        "email": "teach@gmail.com"
+    },
+    {
+        "id":3,
+        "name": "Alvard ",
+        "surname": "Musinyan",
+        "middlename": "Karen",
+        "gender": "female",
+        "age": "50",
+        "birthday": "08.05.1971",
+        "mobile": "077458578",
+        "email": "teach@gmail.com"
+    },
+    {
+        "id":4,
+        "name": "Hambardzum ",
+        "surname": "Aleqsanyan",
+        "middlename": "Bagrat",
+        "gender": "male",
+        "age": "50",
+        "birthday": "08.05.1968",
+        "mobile": "077458578",
+        "email": "teach@gmail.com"
+    }
+]

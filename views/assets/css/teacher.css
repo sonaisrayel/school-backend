@@ -1,0 +1,11 @@
+.teacher{
+    display: inline-flex;
+}
+.addteacher{
+    padding: 7px 15px;
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55;
+    border-radius: 5px;
+    margin-left: 250px;
+}

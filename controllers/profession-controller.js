@@ -2,6 +2,7 @@
 const profession = require("../models/profession.json");
 
 async function getProfessions(req, res) {
+    
     res.render('profession-list', { profession: profession });
 }
 
@@ -12,8 +13,12 @@ async function getProfession(req, res) {
     });
     res.render('profession', { profession: newProfession })
 }
+async function createProfessionView(req, res){
+    res.render('profession-create')
+}
 
 module.exports = {
     getProfessions,
-    getProfession
+    getProfession,
+    createProfessionView
 }

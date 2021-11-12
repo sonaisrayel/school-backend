@@ -66,45 +66,55 @@ html(lang="en")
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    h3 ՖԱԿՈՒԼՏԵՏ
+                h3 ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ                  
                     <br/>
-                    .table-responsive
-                        table(class="table table-bordered ")
-                            thead.thead-dark
+                    .faculty-div_1
+                        .a 
+                            table(class='profession-table')                           
                                 tr
-                                    th #
-                                    th ԱՆՎԱՆՈՒՄ
-                                    th ԲԱԺԻՆ
-                                    th ԿՈՒՐՍ
-                                    th ՈՒՍ. ՎՃԱՐ
-                                    th
-                            tbody.table-hover
-                            each val in profession
-                                tr  
-                                
-                                    td=val.id
-                                    td=val.profession
-                                    td=val.faculty
-                                    td=val.study_yea
-                                    td=val.pay
-                                    td 
-
-                                        a(type="button" class="btn btn-primary" href="/professions/" + val.id) 
-                                            i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="/professions/" + val.id)
-                                            i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="/professions/" + val.id)
-                                            i(class="fa fa-trash-o")
-                                    tr
-                                                                                                  
-                        ul(class="pagination justify-content-end")
-                            li.page-item
-                                a(href="#").page-link Previous
-                            li.page-item
-                                a(href="#").page-link 1
-                            li.page-item
-                                a(href="#").page-link 2
-                            li.page-item
-                                a(href="#").page-link 3
-                            li.page-item
-                                a(href="#").page-link Next
+                                    th(class='profession-th') #
+                                    each val in profession 
+                                        td(class='profession-td')= val.id 
+                                tr
+                                    th(class='profession-th') ԱՆՎԱՆՈՒՄ
+                                    each val in profession
+                                        td(class='profession-td')= val.profession
+                                tr
+                                    th(class='profession-th') ԲԱԺԻՆ
+                                    each val in profession
+                                        td(class='profession-td')= val.faculty
+                                tr
+                                    th(class='profession-th') ԿՈՒՐՍ
+                                    each val in profession
+                                        td(class='profession-td')= val.study_year
+                                tr
+                                    th(class='profession-th') ՈՒՍՄԱՆ ՎՃԱՐ
+                                    each val in profession                        
+                                        td(class='profession-td')= val.pay
+                    hr
+                    br
+                    .div_2
+                        h3 About Me
+                        hr 
+                        p
+                            label(for="")
+                                i(class="fa fa-book") Education
+                            input(type="text" class="profession-input")
+                        p
+                            label(for="") 
+                                i(class="fa fa-map-marker") Location
+                            input(type="text" class="profession-input")
+                        p
+                            label(for="")
+                                i(class="fa fa-pencil") Skills 
+                            input(type="text" class="profession-input")
+                        p
+                            i(class="fa fa-file-text-o") Notes
+                            input(type="text" class="profession-input")                    
+                    
+                    
+                    .profession-div_3
+                        button(type="button" class="profession-button" href="#") View
+                        button(type="button" class="profession-button" href="#") Edit
+                        br
+                    a(href="/professions" class="div_3-a") Վերադառնալ ցուցակին 

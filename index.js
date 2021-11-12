@@ -4,9 +4,12 @@ require('dotenv').config()
 const path = require('path')
 const port = process.env.port
 const bodyParser = require('body-parser')
+
 const { getProfessions, getProfession } = require("./controllers/profession-controller");
 const { getStudents, getStudent,createStudent,createStudentView } = require("./controllers/student-controller");
-const { getFaculty, getFaculties } = require("./controllers/faculty-controller");
+const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");
+
+const { getTeachers } = require("./controllers/teacher-controller.js");
 app.use(bodyParser.json())
 
 //Middlewares
@@ -26,14 +29,12 @@ app.post('/students',createStudent);
 
 
 //teacher 
+app.get('/teachers', getTeachers);
+
 
 app.get('/faculties', getFaculties)
 app.get('/faculties/:id', getFaculty)
-
-//Rob es kgres u commenty kjnjes 
-app.get('/faculty/create',(req, res) =>{
-  res.render('faculty-create')
-})
+app.get('/faculty/create', createFacultyView)
 
 app.get('/professions', getProfessions)
 app.get('/professions/:id', getProfession)

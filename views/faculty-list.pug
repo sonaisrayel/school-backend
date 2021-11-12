@@ -1,3 +1,6 @@
+-var ՀԱՄԱԼՍԱՐԱՆ = "ՀԱՄԱԼՍԱՐԱՆ"
+-var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
+
 doctype html
 html(lang="en")
     head
@@ -5,9 +8,11 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/student.css"  type='text/css')        
-        title= title
         
+        title= ՀԱՄԱԼՍԱՐԱՆ
+
+        link(rel="stylesheet" href="/assets/css/faculty.css" type="text/css")
+       
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
@@ -20,7 +25,7 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid  
+        .container-fluid
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
@@ -30,21 +35,21 @@ html(lang="en")
                                     span(data-feather="home")
                                     | ՑՈՒՑԱԿ  
                             li.nav-item
-                                a(href="/professions").nav-link
+                                a(href="profession.html").nav-link
                                     span(data-feather="file") 
                                     | ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ
                             li.nav-item
-                                a(href="/faculties").nav-link
+                                a(href="#").nav-link
                                     span(data-feather="shopping-cart")
-                                    | ՖԱԿՈՒԼՏԵՏ  
+                                    | ՖԱԿՈՒԼՏԵՏ
                             li.nav-item
                                 a(href="/students").nav-link
                                     span(data-feather="shopping-cart")
-                                    | ՈՒՍԱՆՈՂՆԵՐ
+                                    | ՈՒՍԱՆՈՂԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ    
                             li.nav-item
-                                a(href="/teachers").nav-link
+                                a(href="./student.html").nav-link
                                     span(data-feather="shopping-cart")
-                                    | ԴԱՍԱԽՈՍՆԵՐ
+                                    | ՈՒՍԱՆՈՂՆԵՐ
                         h6(class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted")
                             span= ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ
                             a(class="d-flex align-items-center text-muted" href="#")
@@ -62,58 +67,45 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                form(action="/students" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
-                    .div_1
-                        h4 ԱՎԵԼԱՑՆԵԼ
-                        h2 ՈՒՍԱՆՈՂ
-
-                        hr
-                    .form
-                        .div1
-                        label(for='') ԱՆՈՒՆ
-                        .div2_1
-                        input.input(type='text' autocomplete='off' class='create-input')
-                    .form
-                        .div1
-                        label(for='') ԱԶԳԱՆՈՒՆ
-                        .div2_2
-                        input.input(type='text' autocomplete='off' class='create-input')
-                    .form
-                        .div1
-                        label(for='') ՀԱՅՐԱՆՈՒՆ
-                        .div2_3
-                        input.input(type='text' autocomplete='off' class='create-input')
-                    .form
-                        .div1
-                        label(for='') ՍԵՌ
-                        .div2_4
-                        input.input(type='radio' name='gen' id='female')
-                        label(for="female")  Իգական
-                        input.input(type='radio' name='gen' id='male')
-                        label(for="male")  Արական
-
-                    .form
-                        .div1
-                        label(for='') ԾՆ․ԱՄՍԱԹԻՎ
-                        .div2_5
-                        input.input(type='text' autocomplete='off' class='create-input')
-                    .form
-                        .div1
-                        label(for='') ՀԵՌԱԽՈՍ
-                        .div2_6
-                        input.input(type='tel' autocomplete='off' class='create-input')
-                    .form
-                        .div1
-                        label(for='') Էլ․ՀԱՍՑԵ
-                        .div2_7
-                        input.input(type='email' autocomplete='off' class='create-input')
-
-
-                    br
-                    .div3
-                        button(type='submit' class='create-button' ) ԱՎԵԼԱՑՆԵԼ
-                    hr
-                    a(href="/students") Վերադառնալ ցուցակին
-
-
-                                           
+                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
+                    div 
+                        h3(class="list-fac") ՖԱԿՈՒԼՏԵՏ
+                        a(class='craete-button' href="/faculty/create" id="kochak") ԱՎԵԼԱՑՆԵԼ ՈՒՍԱՆՈՂ
+                    <br/>
+                    .table-responsive
+                        table(class="table table-bordered ")
+                            thead.thead-dark
+                                tr
+                                    th #
+                                    th ԱՆՎԱՆՈՒՄ
+                                    th ԲԱԺԻՆ
+                                    th ՍՈՎՈՐԵԼՈՒ ՏԱՐԻՆԵՐԸ
+                                    th ՈՒՍՄԱՆ ՎՃԱՐ
+                                    th
+                            tbody.table-hover
+                             each val in faculty
+                                tr  
+                                    td= val.id
+                                    td= val.profession
+                                    td= val.faculty
+                                    td= val.study_year
+                                    td= val.pay
+                                    td 
+                                        a(type="button" class="btn btn-primary" href="/faculties/" + val.id) 
+                                            i(class="fa fa-bars")
+                                        a(type="button" class="btn btn-info" href="/faculties/" + val.id)
+                                            i(class="fa fa-edit")
+                                        a(type="button" class="btn btn-danger" href="/faculties/" + val.id)
+                                            i(class="fa fa-trash-o")
+                               
+                        ul(class="pagination justify-content-end")
+                            li.page-item
+                                a(href="#").page-link Previous
+                            li.page-item
+                                a(href="#").page-link 1
+                            li.page-item
+                                a(href="#").page-link 2
+                            li.page-item
+                                a(href="#").page-link 3
+                            li.page-item
+                                a(href="#").page-link Next

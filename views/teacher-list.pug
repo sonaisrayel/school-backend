@@ -1,5 +1,4 @@
--var ՀԱՄԱԼՍԱՐԱՆ = "ՀԱՄԱԼՍԱՐԱՆ"
--var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
+
 
 doctype html
 html(lang="en")
@@ -8,8 +7,9 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
+        link(rel="stylesheet" href="/assets/css/teacher.css"  type='text/css')
         
-        title= ՀԱՄԱԼՍԱՐԱՆ
+        title= title
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
@@ -23,7 +23,7 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid
+        .container-fluid  
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
@@ -48,6 +48,10 @@ html(lang="en")
                                 a(href="./student.html").nav-link
                                     span(data-feather="shopping-cart")
                                     | ՈՒՍԱՆՈՂՆԵՐ
+                            li.nav-item
+                                a(href="").nav-link
+                                    span(data-feather="shopping-cart")
+                                    | ԴԱՍԱԽՈՍՆԵՐ
                         h6(class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted")
                             span= ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ
                             a(class="d-flex align-items-center text-muted" href="#")
@@ -66,36 +70,43 @@ html(lang="en")
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    h3 ՖԱԿՈՒԼՏԵՏ
+                    div
+                        h3(class="teacher") ԴԱՍԱԽՈՍՆԵՐԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
+                        a(class='addteacher' href="/teachers/create") ԱՎԵԼԱՑՆԵԼ ԴԱՍԱԽՈՍՆԵՐ    
                     <br/>
                     .table-responsive
                         table(class="table table-bordered ")
                             thead.thead-dark
                                 tr
                                     th #
-                                    th ԱՆՎԱՆՈՒՄ
-                                    th ԲԱԺԻՆ
-                                    th ԿՈՒՐՍ
-                                    th ՈՒՍ. ՎՃԱՐ
+                                    th ԱՆՈՒՆ
+                                    th ԱԶԳԱՆՈՒՆ
+                                    th ՀԱՅՐԱՆՈՒՆ
+                                    th ՍԵՌ
+                                    th ԾՆ․ԱՄՍԱԹԻՎ
+                                    th ՀԵՌԱԽՈՍ
+                                    th Էլ․ՀԱՍՑԵ
                                     th
                             tbody.table-hover
-                            each val in profession
+                             each val in teacher 
                                 tr  
-                                    td=val.id
-                                    td=val.profession
-                                    td=val.faculty
-                                    td=val.study_yea
-                                    td=val.pay
+                                    td= val.id
+                                    td= val.name
+                                    td= val.surname
+                                    td= val.middlename
+                                    td= val.gender
+                                    td= val.birthday
+                                    td= val.mobile
+                                    td= val.email
                                     td 
-
-                                        a(type="button" class="btn btn-primary" href="/professions/" + val.id) 
+                                        a(type="button" class="btn btn-primary" href="#" + val.id) 
                                             i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="/professions/" + val.id)
+                                        a(type="button" class="btn btn-info" href="#" + val.id)
                                             i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="/professions/" + val.id)
+                                        a(type="button" class="btn btn-danger" href="#" + val.id)
                                             i(class="fa fa-trash-o")
-                                    tr
-                                                                                                  
+                                tr
+                                  
                         ul(class="pagination justify-content-end")
                             li.page-item
                                 a(href="#").page-link Previous
@@ -106,4 +117,4 @@ html(lang="en")
                             li.page-item
                                 a(href="#").page-link 3
                             li.page-item
-                                a(href="#").page-link Next
+                                a(href="#").page-link Next            

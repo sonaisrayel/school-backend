@@ -9,7 +9,7 @@ const { getProfessions, getProfession } = require("./controllers/profession-cont
 const { getStudents, getStudent,createStudent,createStudentView } = require("./controllers/student-controller");
 const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");
 
-const { getTeachers } = require("./controllers/teacher-controller.js");
+const { getTeachers, getTeacher } = require("./controllers/teacher-controller.js");
 app.use(bodyParser.json())
 
 //Middlewares
@@ -30,7 +30,7 @@ app.post('/students',createStudent);
 
 //teacher 
 app.get('/teachers', getTeachers);
-
+app.get('/teachers/:id',getTeacher)
 
 app.get('/faculties', getFaculties)
 app.get('/faculties/:id', getFaculty)

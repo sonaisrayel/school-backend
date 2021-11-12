@@ -4,6 +4,7 @@ require('dotenv').config()
 const path = require('path')
 const port = process.env.port
 const bodyParser = require('body-parser')
+
 const { getProfessions, getProfession } = require("./controllers/profession-controller");
 const { getStudents, getStudent,createStudent,createStudentView } = require("./controllers/student-controller");
 const { getFaculty, getFaculties } = require("./controllers/faculty-controller");

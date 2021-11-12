@@ -9,3 +9,55 @@
     border-radius: 5px;
     margin-left: 250px;
 }
+/* teacher */
+.teacher-img{
+    width: 150px;
+    height: 150px;
+}
+
+.teacher-div_1{
+    display: flex;
+    margin-left: 100px;
+}
+
+.p1{
+    margin-left: 60px;
+    display: inline;
+}
+
+.p2{
+    margin-left: 15px;
+    display: inline;
+}
+
+.teacher-table{
+    margin-left: 150px; 
+}
+
+.teacher-td,.teacher-th{
+    padding:  7px;
+}
+
+.teacher-input{
+    width: 260px;
+    display: block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.teacher-button{
+    display: inline-block;
+    padding: 5px 20px;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.teacher-div_3{
+    margin-left: 84%;
+}
+.div_3-a{
+    margin-left: 82%;
+}
+

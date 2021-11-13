@@ -38,6 +38,8 @@ app.get('/faculty/create', createFacultyView)
 
 app.get('/professions', getProfessions)
 app.get('/professions/:id', getProfession)
+app.get('/professions/create', createProfessionView)
+
 
 
 app.listen(port, () => {

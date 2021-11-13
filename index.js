@@ -6,7 +6,7 @@ const port = process.env.port
 const bodyParser = require('body-parser')
 
 const { getProfessions, getProfession,createProfessionView } = require("./controllers/profession-controller");
-const { getStudents, getStudent,createStudent,createStudentView } = require("./controllers/student-controller");
+const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
 const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");
 
 const { getTeachers, getTeacher } = require("./controllers/teacher-controller.js");
@@ -23,8 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/students', getStudents);
 app.get('/students/create', createStudentView);
 app.get('/students/:id', getStudent);
-app.post('/students',createStudent);
+app.get('/students/edit/:id', editStudentView);
 
+app.post('/students',createStudent);
+app.post('/students/edit',editStudent);
 
 //teacher 
 app.get('/teachers', getTeachers);

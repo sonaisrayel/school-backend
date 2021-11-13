@@ -5,7 +5,7 @@ const path = require('path')
 const port = process.env.port
 const bodyParser = require('body-parser')
 
-const { getProfessions, getProfession,createProfessionView } = require("./controllers/profession-controller");
+const { getProfessions, getProfession,createProfessionView,deleteProfession } = require("./controllers/profession-controller");
 const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
 const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");
 
@@ -39,6 +39,8 @@ app.get('/faculty/create', createFacultyView);
 app.get('/professions', getProfessions);
 app.get('/professions/:id', getProfession);
 app.get('/professions/create', createProfessionView);
+app.get('/professions/delete/:id', deleteProfession);
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

@@ -12,7 +12,21 @@ async function getTeacher(req, res) {
     res.render('teacher', { teacher: newTeacher })    
 }
 
+async function createTeacherView(req,res){
+    res.render('teacher-create')
+}
+
+async function createTeacher(req,res){
+    const { name,surname,middlename,gender,age,birthday,mobile,email } = req.body
+    let id =  teacher.length + 1 ;
+    let newTeacher = req.body;
+    newTeacher.id = id;
+    teacher.push(req.body);
+}
+
 module.exports = {
     getTeachers,
-    getTeacher
+    getTeacher,
+    createTeacher,
+    createTeacherView
 }

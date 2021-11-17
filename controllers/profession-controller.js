@@ -14,7 +14,7 @@ async function getProfession(req, res) {
     res.render('profession', { profession: newProfession })
 }
 async function createProfessionView(req, res){
-    res.render('profession-create')
+    res.render('profession/profession-create')
 }
 
 async function deleteProfession(req,res){

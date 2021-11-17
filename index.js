@@ -31,6 +31,7 @@ app.post('/students/edit',editStudent);
 app.get('/teachers', getTeachers);
 app.get('/teachers/:id',getTeacher);
 
+
 app.get('/faculties', getFaculties);
 app.get('/faculties/:id', getFaculty);
 app.get('/faculty/create', createFacultyView);

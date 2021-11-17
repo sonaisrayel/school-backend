@@ -25,6 +25,7 @@ async function createProfession(req,res){
    profession.push(req.body);
 }
 
+
 async function deleteProfession(req,res){
     const { id } = req.params;
     let profession  = profession.filter(prof => prof.id == id);

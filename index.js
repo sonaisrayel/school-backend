@@ -27,7 +27,6 @@ app.get('/students/edit/:id', editStudentView);
 
 app.post('/students',createStudent);
 app.post('/students/edit',editStudent);
-
 //teacher 
 app.get('/teachers', getTeachers);
 app.get('/teachers/:id',getTeacher);

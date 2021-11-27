@@ -30,8 +30,6 @@ async function createProfession(req,res){
 async function deleteProfession(req,res){
     const { id } = req.params;
     let profession  = profession.filter(prof => prof.id == id);
-
-
 }
 
 module.exports = {

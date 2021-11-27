@@ -7,14 +7,14 @@ async function getStudents(req, res) {
     res.render('student-list', { student: student })
 }
 
-async function getStudent(req, res) {
-    //req -  ինչ որ մեզ ուղարկվել է բրաուզերից
-    // res - ինչ որ մենք ենք ուղարկում հետ
-    const { id } = req.params;
-    console.log('id', id);
-    let newStudent = await Student.findOne({ _id: id });
-    res.render('student', { student: newStudent })
-}
+// async function getStudent(req, res) {
+//     //req -  ինչ որ մեզ ուղարկվել է բրաուզերից
+//     // res - ինչ որ մենք ենք ուղարկում հետ
+//     const { id } = req.params;
+//     console.log('id', id);
+//     let newStudent = await Student.findOne({ _id: id });
+//     res.render('student', { student: newStudent })
+// }
 
 //Get request
 async function createStudentView(req, res) {
@@ -24,7 +24,8 @@ async function createStudentView(req, res) {
 async function createStudent(req, res) {
     const { name, surname, middlename, gender, birthday, mobile, email } = req.body;
     let student = await Student.create({ name, surname, middlename, gender, birthday, mobile, email });
-    res.render('student-list', { student: student })
+    let students = await Student.find();
+    res.render('student-list', { student: students })
 }
 
 // async function editStudentView(req, res) {
@@ -40,7 +41,7 @@ async function createStudent(req, res) {
 
 module.exports = {
     getStudents,
-    getStudent,
+   //getStudent,
     createStudent,
     createStudentView,
     //  editStudentView,

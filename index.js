@@ -6,10 +6,13 @@ const port = process.env.port
 const bodyParser = require('body-parser')
 
 const { getProfessions, getProfession,createProfessionView,deleteProfession, createProfession } = require("./controllers/profession-controller");
+const mongoDb = require('./libs/db')
+mongoDb.connect();
+
 const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
 const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");
 
-const { getTeachers, getTeacher } = require("./controllers/teacher-controller.js");
+const { getTeachers, getTeacher, createTeacher, createTeacherView } = require("./controllers/teacher-controller.js");
 app.use(bodyParser.json())
 
 //Middlewares
@@ -27,10 +30,12 @@ app.get('/students/edit/:id', editStudentView);
 
 app.post('/students',createStudent);
 app.post('/students/edit',editStudent);
+
 //teacher 
 app.get('/teachers', getTeachers);
+app.get('/teachers/create',createTeacherView);
 app.get('/teachers/:id',getTeacher);
-
+app.post('/teachers',createTeacher);
 
 app.get('/faculties', getFaculties);
 app.get('/faculties/:id', getFaculty);

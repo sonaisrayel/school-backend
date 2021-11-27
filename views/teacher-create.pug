@@ -1,3 +1,5 @@
+-var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
+
 doctype html
 html(lang="en")
     head
@@ -5,7 +7,7 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/student.css"  type='text/css')        
+        link(rel="stylesheet" href="/assets/css/teacher.css"  type='text/css')        
         title= title
         
         // Bootstrap core CSS
@@ -62,18 +64,17 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                form(action="/students" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                form(action="/teachers" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
                     .div_1
                         h4 ԱՎԵԼԱՑՆԵԼ
-                        h2 ՈՒՍԱՆՈՂ
+                        h2 ԴԱՍԱԽՈՍ
 
                         hr
                     .form
                         .div1
                         label(for='') ԱՆՈՒՆ
-                        span(id="bubu" style="display:none") gir anund
                         .div2_1
-                        input.input(type='text' id="name" value="" autocomplete='off' class='create-input')
+                        input.input(type='text' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
@@ -108,12 +109,13 @@ html(lang="en")
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
                         input.input(type='email' autocomplete='off' class='create-input')
+
+
                     br
                     .div3
-                        button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ
+                        button(type='submit' class='create-button' ) ԱՎԵԼԱՑՆԵԼ
                     hr
-                    a(href="/students") Վերադառնալ ցուցակին
-        script(type="text/javascript"  src="/assets/js/student.js")
+                    a(href="/teachers") Վերադառնալ ցուցակին
 
 
                                            

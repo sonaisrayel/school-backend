@@ -5,6 +5,9 @@ const path = require('path')
 const port = process.env.port
 const bodyParser = require('body-parser')
 
+const mongoDb = require('./libs/db')
+mongoDb.connect();
+
 const { getProfessions, getProfession,createProfessionView,deleteProfession } = require("./controllers/profession-controller");
 const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
 const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");

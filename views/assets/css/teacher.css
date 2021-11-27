@@ -60,4 +60,58 @@
 .div_3-a{
     margin-left: 82%;
 }
+/* teacher-create */
+.create-input{
+    border: solid 1px rgb(175, 173, 173);
+    border-radius: 5px;
+    width: 250px;
+}
 
+.form{
+    margin-left: 300px;
+}
+
+.div1{
+    display: inline;
+}
+
+.div2_1{
+    display: inline-block;
+    padding-left: 118px;
+}
+.div2_2{
+    display: inline-block;
+    padding-left: 84px;
+}
+.div2_3{
+    display: inline-block;
+    padding-left: 77px;
+}
+.div2_4{
+    display: inline-block;
+    padding-left: 143px;
+}
+#male,#female{
+    margin-left: 25px;
+}
+.div2_5{
+    display: inline-block;
+    padding-left: 70px;
+}
+.div2_6{
+    display: inline-block;
+    padding-left: 97px;
+}
+.div2_7{
+    display: inline-block;
+    padding-left: 103px;
+}
+
+.create-button{
+    padding: 5px 20px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.div3{
+    margin-left: 480px;
+}

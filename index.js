@@ -12,7 +12,7 @@ const { getProfessions, getProfession,createProfessionView,deleteProfession } = 
 const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
 const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");
 
-const { getTeachers, getTeacher } = require("./controllers/teacher-controller.js");
+const { getTeachers, getTeacher, createTeacher, createTeacherView } = require("./controllers/teacher-controller.js");
 app.use(bodyParser.json())
 
 //Middlewares
@@ -33,7 +33,11 @@ app.post('/students/edit',editStudent);
 
 //teacher 
 app.get('/teachers', getTeachers);
+app.get('/teachers/create',createTeacherView);
 app.get('/teachers/:id',getTeacher);
+
+app.post('/teachers',createTeacher);
+
 
 app.get('/faculties', getFaculties);
 app.get('/faculties/:id', getFaculty);

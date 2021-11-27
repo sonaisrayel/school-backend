@@ -1,7 +1,6 @@
 const faculty = require("../models/profession.json");
 
 async function getFaculties(req, res) {
-    console.log(faculty);
     res.render('faculty-list',{ faculty:faculty });
 }
 

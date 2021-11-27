@@ -1,6 +1,7 @@
 
 const profession = require("../models/profession.json");
 const fs = require('fs');
+const Profession = require("../models/profession-model.js")
 
 async function getProfessions(req, res) {
     res.render('profession/profession-list', { profession: profession });
@@ -11,18 +12,18 @@ async function getProfession(req, res) {
     const newProfession = profession.filter((pro) => {
         return pro.id == id
     });
-    res.render('profession', { profession: newProfession })
+    res.render('profession/profession', { profession: newProfession })
 }
+
+
 async function createProfessionView(req, res){
     res.render('profession/profession-create')
 }
 
 async function createProfession(req,res){
     const {profession,faculty,pay,study_year } = req.body
-   let id =  profession.length + 1 ;
-   let newProfession = req.body;
-   newProfession.id = id;
-   profession.push(req.body);
+    let proff = await Profession.create({profession,faculty,pay,study_year })
+    res.render('profession/profession-list', { profession: proff })
 }
 
 

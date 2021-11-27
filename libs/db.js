@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const conn = process.env.mongoDBConnection;
 
+
 function connect() {
     mongoose.connect(conn, {
         useNewUrlParser: true,
@@ -9,12 +10,10 @@ function connect() {
 
     mongoose.connection.on('error', (error) => {
         console.log(error);
-
     })
 
     mongoose.connection.on('connected', () => {
         console.log('Connection is open');
-
     })
 }
 

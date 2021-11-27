@@ -73,8 +73,9 @@ html(lang="en")
                     .form
                         .div1
                         label(for='') ԱՆՈՒՆ
+                        span(id="bubu" style="display:none") gir anund
                         .div2_1
-                        input.input(type='text' autocomplete='off' class='create-input')
+                        input.input(type='text' id="name" value="" autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
@@ -109,13 +110,12 @@ html(lang="en")
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
                         input.input(type='email' autocomplete='off' class='create-input')
-
-
                     br
                     .div3
-                        button(type='submit' class='create-button' ) ԱՎԵԼԱՑՆԵԼ
+                        button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ
                     hr
                     a(href="/students") Վերադառնալ ցուցակին
+        script(type="text/javascript"  src="/assets/js/student.js")
 
 
                                            

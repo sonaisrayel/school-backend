@@ -1,3 +1,4 @@
+-var title = "ԴԱՍԱԽՈՍԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ"
 -var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
 
 doctype html
@@ -7,13 +8,11 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/teacher.css"  type='text/css')
-        
+        link(rel="stylesheet" href="/assets/css/teacher.css"  type='text/css')        
         title= title
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-        link(rel="stylesheet" href="dashboard.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
@@ -23,7 +22,7 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid  
+        .container-fluid
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
@@ -66,52 +65,69 @@ html(lang="en")
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    div
-                        h3(class="teacher") ԴԱՍԱԽՈՍՆԵՐԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
-                        a(class='addteacher' href="/teachers/create") ԱՎԵԼԱՑՆԵԼ ԴԱՍԱԽՈՍՆԵՐ    
+                    h3 ԴԱՍԱԽՈՍԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
                     <br/>
-                    .table-responsive
-                        table(class="table table-bordered ")
-                            thead.thead-dark
+                    .teacher-div_1
+                        .a   
+
+                            img(src="/assets/images/boy.jpg" class="teacher-img" alt="")
+
+                            br
+                            p.p1 # 
+                                each val in teacher 
+                                    b=val.id 
+                            br     
+                            p.p2
+                                each val in teacher 
+                                    b= val.name
+                                each val in teacher 
+                                    b= val.surname 
+                        .b
+                            table(class='teacher-table')                           
                                 tr
-                                    th #
-                                    th ԱՆՈՒՆ
-                                    th ԱԶԳԱՆՈՒՆ
-                                    th ՀԱՅՐԱՆՈՒՆ
-                                    th ՍԵՌ
-                                    th ԾՆ․ԱՄՍԱԹԻՎ
-                                    th ՀԵՌԱԽՈՍ
-                                    th Էլ․ՀԱՍՑԵ
-                                    th
-                            tbody.table-hover
-                             each val in teacher 
-                                tr  
-                                    td= val.id
-                                    td= val.name
-                                    td= val.surname
-                                    td= val.middlename
-                                    td= val.gender
-                                    td= val.birthday
-                                    td= val.mobile
-                                    td= val.email
-                                    td 
-                                        a(type="button" class="btn btn-primary" href="/teachers/" + val.id) 
-                                            i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="#" + val.id)
-                                            i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="#" + val.id)
-                                            i(class="fa fa-trash-o")
-                                        
+                                    th(class='teacher-th') ՀԱՅՐԱՆՈՒՆ
+                                    each val in teacher
+                                        td(class='teacher-td')= val.middlename
                                 tr
-                                  
-                        ul(class="pagination justify-content-end")
-                            li.page-item
-                                a(href="#").page-link Previous
-                            li.page-item
-                                a(href="#").page-link 1
-                            li.page-item
-                                a(href="#").page-link 2
-                            li.page-item
-                                a(href="#").page-link 3
-                            li.page-item
-                                a(href="#").page-link Next            
+                                    th(class='teacher-th') ՍԵՌ
+                                    each val in teacher
+                                        td(class='teacher-td')= val.gender
+                                tr
+                                    th(class='teacher-th') ԾՆ․ԱՄՍԱԹԻՎ
+                                    each val in teacher
+                                        td(class='teacher-td')= val.birthday
+                                tr
+                                    th(class='teacher-th') ՀԵՌԱԽՈՍ
+                                    each val in teacher
+                                        td(class='teacher-td')= val.mobile
+                                tr
+                                    th(class='teacher-th') Էլ․ՀԱՍՑԵ
+                                    each val in teacher                        
+                                        td(class='teacher-td')= val.email
+                    hr
+                    br
+                    .div_2
+                        h3 About Me
+                        hr 
+                        p
+                            label(for="")
+                                i(class="fa fa-book") Education
+                            input(type="text" class="teacher-input")
+                        p
+                            label(for="") 
+                                i(class="fa fa-map-marker") Location
+                            input(type="text" class="teacher-input")
+                        p
+                            label(for="")
+                                i(class="fa fa-pencil") Skills 
+                            input(type="text" class="teacher-input")
+                        p
+                            i(class="fa fa-file-text-o") Notes
+                            input(type="text" class="teacher-input")                    
+                    
+                    
+                    .teacher-div_3
+                        button(type="button" class="teacher-button" href="#") View
+                        button(type="button" class="teacher-button" href="#") Edit
+                        br
+                    a(href="/teachers" class="div_3-a") Վերադառնալ ցուցակին 

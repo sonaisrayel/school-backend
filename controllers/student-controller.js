@@ -29,14 +29,25 @@ async function createStudent(req,res){
    let newStudent = req.body;
    newStudent.id = id;
    student.push(req.body);
-   fs.writeFileSync('students.json',JSON.stringify(student));
+   //fs.writeFileSync('students.json',JSON.stringify(student));
 }
- 
+
+async function  editStudentView (req,res){
+    const { id } = req.params;   
+    let stu = student.filter(stud => stud.id == id);
+    res.render('student-edit',  { student:stu } );
+}
+
+async function editStudent(req,res){
+    //vercnel tvyal id-ov json-@ ev popoxel tvyalnery
+    console.log(req.body);
+} 
 
 module.exports = {
     getStudents,
     getStudent,
     createStudent,
-    createStudentView
-    
+    createStudentView ,
+    editStudentView,
+    editStudent 
 }

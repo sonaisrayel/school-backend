@@ -1,4 +1,6 @@
+-var ՀԱՄԱԼՍԱՐԱՆ = "ՀԱՄԱԼՍԱՐԱՆ"
 -var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
+
 
 doctype html
 html(lang="en")
@@ -7,13 +9,12 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/teacher.css"  type='text/css')
+        link(rel="stylesheet" href="/assets/css/profession.css"  type='text/css')
         
-        title= title
+        title= ՀԱՄԱԼՍԱՐԱՆ
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-        link(rel="stylesheet" href="dashboard.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
@@ -23,7 +24,7 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid  
+        .container-fluid
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
@@ -65,53 +66,33 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    div
-                        h3(class="teacher") ԴԱՍԱԽՈՍՆԵՐԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
-                        a(class='addteacher' href="/teachers/create") ԱՎԵԼԱՑՆԵԼ ԴԱՍԱԽՈՍՆԵՐ    
-                    <br/>
-                    .table-responsive
-                        table(class="table table-bordered ")
-                            thead.thead-dark
-                                tr
-                                    th #
-                                    th ԱՆՈՒՆ
-                                    th ԱԶԳԱՆՈՒՆ
-                                    th ՀԱՅՐԱՆՈՒՆ
-                                    th ՍԵՌ
-                                    th ԾՆ․ԱՄՍԱԹԻՎ
-                                    th ՀԵՌԱԽՈՍ
-                                    th Էլ․ՀԱՍՑԵ
-                                    th
-                            tbody.table-hover
-                             each val in teacher 
-                                tr  
-                                    td= val.id
-                                    td= val.name
-                                    td= val.surname
-                                    td= val.middlename
-                                    td= val.gender
-                                    td= val.birthday
-                                    td= val.mobile
-                                    td= val.email
-                                    td 
-                                        a(type="button" class="btn btn-primary" href="/teachers/" + val.id) 
-                                            i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="#" + val.id)
-                                            i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="#" + val.id)
-                                            i(class="fa fa-trash-o")
-                                        
-                                tr
-                                  
-                        ul(class="pagination justify-content-end")
-                            li.page-item
-                                a(href="#").page-link Previous
-                            li.page-item
-                                a(href="#").page-link 1
-                            li.page-item
-                                a(href="#").page-link 2
-                            li.page-item
-                                a(href="#").page-link 3
-                            li.page-item
-                                a(href="#").page-link Next            
+                main(action="/professions" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                    .div_1
+                        h4 ԱՎԵԼԱՑՆԵԼ
+                        h2 ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
+                        hr
+                    .form
+                        .div1
+                            label(for='') ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
+                        .div2_1
+                            input.input(type='text' autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՖԱԿՈՒԼՏԵՏ
+                        .div2_2
+                        input.input(type='text' autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ԿՈՒՐՍ
+                        .div2_3
+                        input.input(type='text' autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՈՒՍՄԱՆ ՎՃԱՐ
+                        .div2_4
+                        input.input(type='text' autocomplete='off' class='create-input')
+                    br
+                    .div_2_button
+                        button(type='submit' href='create-button') ԱՎԵԼԱՑՆԵԼ
+                    hr
+                    a(href="/professions" class="het") Վերադառնալ ցուցակին

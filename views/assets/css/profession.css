@@ -1,73 +1,68 @@
-.teacher{
-    display: inline-flex;
-}
-.addteacher{
+
+.craete-button{
     padding: 7px 15px;
     color: #fff;
     background-color: #343a40;
     border-color: #454d55;
     border-radius: 5px;
-    margin-left: 250px;
-}
-/* teacher */
-.teacher-img{
-    width: 150px;
-    height: 150px;
+    margin-left: 700px;
 }
 
-.teacher-div_1{
+
+.list-pro{
+    display: inline-flex;
+}
+
+
+.profession-div_1{
     display: flex;
     margin-left: 100px;
 }
 
-.p1{
-    margin-left: 60px;
-    display: inline;
-}
-
-.p2{
-    margin-left: 15px;
-    display: inline;
-}
-
-.teacher-table{
+.profession-table{
     margin-left: 150px; 
 }
-
-.teacher-td,.teacher-th{
+  
+.profession-td{
     padding:  7px;
 }
-
-.teacher-input{
+.profession-th{
+    padding:  7px;
+}
+  
+.profession-input{
     width: 260px;
     display: block;
     border-top: none;
     border-left: none;
     border-right: none;
-}
-
-.teacher-button{
+ }
+  
+.profession-button{
     display: inline-block;
     padding: 5px 20px;
     color: #007bff;
     background-color: #fff;
     border: 1px solid #dee2e6;
 }
-
-.teacher-div_3{
+  
+.profession-div_3{
     margin-left: 84%;
 }
 .div_3-a{
     margin-left: 82%;
 }
-/* teacher-create */
-.create-input{
+
+
+/*Create*/
+  input{
     border: solid 1px rgb(175, 173, 173);
     border-radius: 5px;
     width: 250px;
 }
 
 .form{
+    margin-top: 15px;
     margin-left: 300px;
 }
 
@@ -76,42 +71,44 @@
 }
 
 .div2_1{
+    margin-top: 50px;
     display: inline-block;
-    padding-left: 118px;
+    padding-left: 50px;
 }
 .div2_2{
     display: inline-block;
-    padding-left: 84px;
+    padding-left: 86px;
 }
 .div2_3{
     display: inline-block;
-    padding-left: 77px;
+    padding-left: 86px;
 }
 .div2_4{
     display: inline-block;
-    padding-left: 143px;
-}
-#male,#female{
-    margin-left: 25px;
-}
-.div2_5{
-    display: inline-block;
-    padding-left: 70px;
-}
-.div2_6{
-    display: inline-block;
-    padding-left: 97px;
-}
-.div2_7{
-    display: inline-block;
-    padding-left: 103px;
+    padding-left: 48px;
 }
 
-.create-button{
+button{
     padding: 5px 20px;
     background-color: #fff;
     border: 1px solid #dee2e6;
 }
-.div3{
+.div_2_button{
+    margin-bottom: 50px;
     margin-left: 480px;
+}
+
+h3{
+    display: inline-flex;
+}
+.het{
+    color: black;
+}
+.craete-button{
+    padding: 7px 15px;
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55;
+    border-radius: 5px;
+    margin-left: 500px;
 }

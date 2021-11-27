@@ -1,8 +1,5 @@
-//const config = require("config");
 const mongoose = require('mongoose');
 const conn = process.env.mongoDBConnection;
-
-//const conn = config.get('mongoDB.connection');
 
 function connect() {
     mongoose.connect(conn, {

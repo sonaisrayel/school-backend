@@ -1,18 +1,22 @@
 -var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
 
 doctype html
+
 html(lang="en")
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/faculty.css"  type='text/css')        
+                
         title= title
-        
+
+        link(rel="stylesheet" href="/assets/css/faculty.css"  type='text/css')
+
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
+        
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
             a(class="navbar-brand col-sm-3 col-md-2 mr-0" href="#") ՀԱՄԱԼՍԱՐԱՆ
@@ -21,15 +25,16 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid
+        .container-fluid  
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
-                        ul(class="nav flex-column")
+                        ul(class="nav flex-column" id="nav")
                             li.nav-item
-                                a(class="nav-link active" href="#")
+                                p(class="p")
                                     span(data-feather="home")
-                                    | ՑՈՒՑԱԿ  
+                                    | ՑՈՒՑԱԿ
+                                    hr  
                             li.nav-item
                                 a(href="/professions").nav-link
                                     span(data-feather="file") 
@@ -47,10 +52,9 @@ html(lang="en")
                                     span(data-feather="shopping-cart")
                                     | ԴԱՍԱԽՈՍՆԵՐ
                         h6(class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted")
-                            span= ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ
                             a(class="d-flex align-items-center text-muted" href="#")
                                 span(data-feather="plus-circle")
-                        ul(class="nav flex-column mb-2")
+                        ul(class="nav flex-column mb-2" id="nav_1")
                             li.nav-item
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
@@ -64,55 +68,32 @@ html(lang="en")
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    h3 ՖԱԿՈՒԼՏԵՏ                  
-                    <br/>
-                    .faculty-div_1
-                        .a 
-                            table(class='faculty-table')                           
-                                tr
-                                    th(class='faculty-th') #
-                                    each val in faculty
-                                        td(class='faculty-td')= val.id 
-                                tr
-                                    th(class='faculty-th') ԱՆՎԱՆՈՒՄ
-                                    each val in faculty
-                                        td(class='faculty-td')= val.profession
-                                tr
-                                    th(class='faculty-th') ԲԱԺԻՆ
-                                    each val in faculty
-                                        td(class='faculty-td')= val.faculty
-                                tr
-                                    th(class='faculty-th') ՍՈՎՈՐԵԼՈՒ ՏԱՐԻՆԵՐԸ
-                                    each val in faculty
-                                        td(class='faculty-td')= val.study_year
-                                tr
-                                    th(class='faculty-th') ՈՒՍՄԱՆ ՎՃԱՐ
-                                    each val in faculty                        
-                                        td(class='faculty-td')= val.pay
-                    hr
+                    .div_1
+                        h4 ԱՎԵԼԱՑՆԵԼ
+                        h2 ՖԱԿՈՒԼՏԵՏ
+                        hr
+                    .form
+                        .div1
+                            label(for='') ԱՆՎԱՆՈՒՄ
+                        .div2_1
+                            input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԲԱԺԻՆ
+                        .div2_2
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ԿՈՒՐՍ
+                        .div2_3
+                        input.input(type='text')
+                    .form
+                        .div1
+                        label(for='') ՈՒՍՄԱՆ Ձև
+                        .div2_4
+                        input.input(type='text')
                     br
-                    .div_2
-                        h3 About Me
-                        hr 
-                        p
-                            label(for="")
-                                i(class="fa fa-book") Education
-                            input(type="text" class="faculty-input")
-                        p
-                            label(for="") 
-                                i(class="fa fa-map-marker") Location
-                            input(type="text" class="faculty-input")
-                        p
-                            label(for="")
-                                i(class="fa fa-pencil") Skills 
-                            input(type="text" class="faculty-input")
-                        p
-                            i(class="fa fa-file-text-o") Notes
-                            input(type="text" class="faculty-input")                    
-                    
-                    
-                    .faculty-div_3
-                        button(type="button" class="faculty-button" href="#") View
-                        button(type="button" class="faculty-button" href="#") Edit
-                        br
-                    a(href="/faculties" class="div_3-a") Վերադառնալ ցուցակին 
+                    .div_2_button
+                        button(type='button' href='#') ԱՎԵԼԱՑՆԵԼ
+                    hr
+                    a(href="/faculties" class="het") Վերադառնալ ցուցակին

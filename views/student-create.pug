@@ -80,12 +80,17 @@ html(lang="en")
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
                         .div2_2
-                        input.input(type='text' name="surname" autocomplete='off' class='create-input')
+
+                        input.input(type='text' id='surname' name="surname" value="" autocomplete='off' class='create-input')
+
+
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
                         .div2_3
-                        input.input(type='text' name='middlename' autocomplete='off' class='create-input')
+
+                        input.input(type='text' id="hayranun"  value="" autocomplete='off' class='create-input')
+
                     .form
                         .div1
                         label(for='') ՍԵՌ
@@ -99,17 +104,26 @@ html(lang="en")
                         .div1
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
                         .div2_5
-                        input.input(type='text' autocomplete='off' name='birthday' class='create-input')
+                        input.input(type='text'  id="tiv"  value="" autocomplete='off' class='create-input')
+
+
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
                         .div2_6
-                        input.input(type='tel' autocomplete='off' name='mobile' class='create-input')
+
+                        input.input(type='tel' id="tel"  value="" name='mobile' autocomplete='off' class='create-input')
+
+                        
+
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
-                        input.input(type='email' autocomplete='off' name='email' class='create-input')
+
+                        input.input(type='email'  id="email"  value="" name='email' autocomplete='off' class='create-input')
+
+
                     br
                     .div3
                         button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ

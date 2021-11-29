@@ -1,3 +1,5 @@
+-var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
+
 doctype html
 html(lang="en")
     head
@@ -73,24 +75,29 @@ html(lang="en")
                         label(for='') ԱՆՈՒՆ
                         span(id="bubu" style="display:none") gir anund
                         .div2_1
-                        input.input(type='text' id="name" value="" autocomplete='off' class='create-input')
+                        input.input(type='text' id="name" value=""  name='name' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
                         .div2_2
-                        input.input(type='text' id='surname'  value="" autocomplete='off' class='create-input')
+
+                        input.input(type='text' id='surname' name="surname" value="" autocomplete='off' class='create-input')
+
+
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
                         .div2_3
+
                         input.input(type='text' id="hayranun"  value="" autocomplete='off' class='create-input')
+
                     .form
                         .div1
                         label(for='') ՍԵՌ
                         .div2_4
-                        input.input(type='radio' name='gen' id='female')
+                        input.input(type='radio' name='gender' id='female')
                         label(for="female")  Իգական
-                        input.input(type='radio' name='gen' id='male')
+                        input.input(type='radio' name='gender' id='male')
                         label(for="male")  Արական
 
                     .form
@@ -98,16 +105,25 @@ html(lang="en")
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
                         .div2_5
                         input.input(type='text'  id="tiv"  value="" autocomplete='off' class='create-input')
+
+
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
                         .div2_6
-                        input.input(type='tel' id="tel"  value=""  autocomplete='off' class='create-input')
+
+                        input.input(type='tel' id="tel"  value="" name='mobile' autocomplete='off' class='create-input')
+
+                        
+
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
-                        input.input(type='email'  id="email"  value=""  autocomplete='off' class='create-input')
+
+                        input.input(type='email'  id="email"  value="" name='email' autocomplete='off' class='create-input')
+
+
                     br
                     .div3
                         button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ

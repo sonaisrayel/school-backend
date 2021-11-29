@@ -1,6 +1,7 @@
 -var ՀԱՄԱԼՍԱՐԱՆ = "ՀԱՄԱԼՍԱՐԱՆ"
 -var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
 
+
 doctype html
 html(lang="en")
     head
@@ -8,12 +9,12 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
+        link(rel="stylesheet" href="/assets/css/profession.css"  type='text/css')
         
         title= ՀԱՄԱԼՍԱՐԱՆ
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-        link(rel="stylesheet" href="dashboard.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
@@ -65,56 +66,33 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                h3 ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ                  
-                    <br/>
-                    .faculty-div_1
-                        .a 
-                            table(class='profession-table')                           
-                                tr
-                                    th(class='profession-th') #
-                                    each val in profession 
-                                        td(class='profession-td')= val.id 
-                                tr
-                                    th(class='profession-th') ԱՆՎԱՆՈՒՄ
-                                    each val in profession
-                                        td(class='profession-td')= val.profession
-                                tr
-                                    th(class='profession-th') ԲԱԺԻՆ
-                                    each val in profession
-                                        td(class='profession-td')= val.faculty
-                                tr
-                                    th(class='profession-th') ԿՈՒՐՍ
-                                    each val in profession
-                                        td(class='profession-td')= val.study_year
-                                tr
-                                    th(class='profession-th') ՈՒՍՄԱՆ ՎՃԱՐ
-                                    each val in profession                        
-                                        td(class='profession-td')= val.pay
-                    hr
+                main(action="/professions" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                    .div_1
+                        h4 ԱՎԵԼԱՑՆԵԼ
+                        h2 ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
+                        hr
+                    .form
+                        .div1
+                            label(for='') ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
+                        .div2_1
+                            input.input(type='text' autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՖԱԿՈՒԼՏԵՏ
+                        .div2_2
+                        input.input(type='text' autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ԿՈՒՐՍ
+                        .div2_3
+                        input.input(type='text' autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՈՒՍՄԱՆ ՎՃԱՐ
+                        .div2_4
+                        input.input(type='text' autocomplete='off' class='create-input')
                     br
-                    .div_2
-                        h3 About Me
-                        hr 
-                        p
-                            label(for="")
-                                i(class="fa fa-book") Education
-                            input(type="text" class="profession-input")
-                        p
-                            label(for="") 
-                                i(class="fa fa-map-marker") Location
-                            input(type="text" class="profession-input")
-                        p
-                            label(for="")
-                                i(class="fa fa-pencil") Skills 
-                            input(type="text" class="profession-input")
-                        p
-                            i(class="fa fa-file-text-o") Notes
-                            input(type="text" class="profession-input")                    
-                    
-                    
-                    .profession-div_3
-                        button(type="button" class="profession-button" href="#") View
-                        button(type="button" class="profession-button" href="#") Edit
-                        br
-                    a(href="/professions" class="div_3-a") Վերադառնալ ցուցակին 
+                    .div_2_button
+                        button(type='submit' href='create-button') ԱՎԵԼԱՑՆԵԼ
+                    hr
+                    a(href="/professions" class="het") Վերադառնալ ցուցակին

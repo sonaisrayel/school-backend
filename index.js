@@ -11,7 +11,7 @@ const port = process.env.port
 
 const mongoDb = require('./libs/db')
 mongoDb.connect();
-const {  getStudents,createStudent,createStudentView } = require("./controllers/student-controller");
+const {  getStudents,createStudent,createStudentView,getStudent } = require("./controllers/student-controller");
 
 const { getProfessions, getProfession,createProfessionView,deleteProfession, createProfession } = require("./controllers/profession-controller");
 //const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 //routes
 app.get('/students', getStudents);
 app.get('/students/create', createStudentView);
-//app.get('/students/:id', getStudent);
+app.get('/students/:id', getStudent);
 //app.get('/students/edit/:id', editStudentView);
 
 app.post('/students',createStudent);

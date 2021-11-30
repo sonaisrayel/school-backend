@@ -75,25 +75,20 @@ html(lang="en")
                     .form
                         .div1
                             label(for='') ԱՆՎԱՆՈՒՄ
-                        .div2_1
+                        .div1_1
                             input.input(type='text')
                     .form
                         .div1
-                        label(for='') ԲԱԺԻՆ
-                        .div2_2
+                        label(for='') ՈՒՍ ՏԱՐԻՆԵՐԸ
+                        .div1_2
                         input.input(type='text')
                     .form
                         .div1
-                        label(for='') ԿՈՒՐՍ
-                        .div2_3
-                        input.input(type='text')
-                    .form
-                        .div1
-                        label(for='') ՈՒՍՄԱՆ Ձև
-                        .div2_4
+                        label(for='') ՈՒՍ ՎՃԱՐ
+                        .div1_3
                         input.input(type='text')
                     br
                     .div_2_button
-                        button(type='button' href='#') ԱՎԵԼԱՑՆԵԼ
+                        button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ
                     hr
                     a(href="/faculties" class="het") Վերադառնալ ցուցակին

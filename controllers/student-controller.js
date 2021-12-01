@@ -4,7 +4,7 @@ const fs = require('fs');
 
 async function getStudents(req, res) {
     let student = await Student.find();
-    res.render('student-list', { student: student })
+    res.render('student/student-list', { student: student })
 }
 
 async function getStudent(req, res) {
@@ -13,19 +13,19 @@ async function getStudent(req, res) {
     const { id } = req.params;
     console.log('id', id);
     let newStudent = await Student.findOne({ _id: id });  
-    res.render('student', { student: newStudent })
+    res.render('student/student', { student: newStudent })
 }
 
 //Get request
 async function createStudentView(req, res) {
-    res.render('student-create')
+    res.render('student/student-create')
 }
 
 async function createStudent(req, res) {
     const { name, surname, middlename, gender, birthday, mobile, email } = req.body;
     let student = await Student.create({ name, surname, middlename, gender, birthday, mobile, email });
     let students = await Student.find();
-    res.render('student-list', { student: students })
+    res.render('student/student-list', { student: students })
 }
 
 // async function editStudentView(req, res) {
@@ -41,7 +41,7 @@ async function createStudent(req, res) {
 
 module.exports = {
     getStudents,
-   getStudent,
+    getStudent,
     createStudent,
     createStudentView,
     //  editStudentView,

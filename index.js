@@ -15,7 +15,7 @@ const {  getStudents,createStudent,createStudentView,getStudent } = require("./c
 
 const { getProfessions, getProfession,createProfessionView,deleteProfession, createProfession } = require("./controllers/profession-controller");
 //const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
-const { getFaculty, getFaculties, createFacultyView} = require("./controllers/faculty-controller");
+const { getFaculty, getFaculties, createFacultyView, createFaculty} = require("./controllers/faculty-controller");
 const { getTeachers, getTeacher, createTeacher, createTeacherView } = require("./controllers/teacher-controller.js");
 
 //Middlewares
@@ -40,9 +40,12 @@ app.get('/teachers/create',createTeacherView);
 app.get('/teachers/:id',getTeacher);
 app.post('/teachers',createTeacher);
 
+//faculty
 app.get('/faculties', getFaculties);
 app.get('/faculties/:id', getFaculty);
-app.get('/faculty/create', createFacultyView);
+app.get('/facultiy/create', createFacultyView);
+app.post('/faculties', createFaculty)
+
 
 app.get('/professions', getProfessions);
 app.get('/professions/:id', getProfession);

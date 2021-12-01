@@ -121,3 +121,18 @@
 .list-h3{
     display: inline-flex;
 }
+
+/*nav*/
+
+#nav{
+    position: fixed;
+}
+
+#nav_1{
+    position: fixed;
+    margin-top: 210px;
+}
+
+.p{
+    margin-left: 15px;
+}

@@ -115,3 +115,18 @@
 .div3{
     margin-left: 480px;
 }
+
+/*nav*/
+
+#nav{
+    position: fixed;
+}
+
+#nav_1{
+    position: fixed;
+    margin-top: 210px;
+}
+
+.p{
+    margin-left: 15px;
+}

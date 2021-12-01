@@ -27,11 +27,12 @@ html(lang="en")
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
-                        ul(class="nav flex-column")
+                        ul(class="nav flex-column" id="nav")
                             li.nav-item
-                                a(class="nav-link active" href="#")
+                                p(class="p")
                                     span(data-feather="home")
                                     | ՑՈՒՑԱԿ  
+                                    hr
                             li.nav-item
                                 a(href="/professions").nav-link
                                     span(data-feather="file") 
@@ -49,10 +50,9 @@ html(lang="en")
                                     span(data-feather="shopping-cart")
                                     | ԴԱՍԱԽՈՍՆԵՐ
                         h6(class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted")
-                            span= ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ
                             a(class="d-flex align-items-center text-muted" href="#")
                                 span(data-feather="plus-circle")
-                        ul(class="nav flex-column mb-2")
+                        ul(class="nav flex-column mb-2" id="nav_1")
                             li.nav-item
                                 a(href="#").nav-link
                                     span(data-feather="file-text")

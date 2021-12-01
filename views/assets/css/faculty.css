@@ -70,22 +70,18 @@
     display: inline;
 }
 
-.div2_1{
+.div1_1{
     margin-top: 50px;
     display: inline-block;
     padding-left: 50px;
 }
-.div2_2{
+.div1_2{
     display: inline-block;
-    padding-left: 86px;
+    padding-left: 16px;
 }
-.div2_3{
+.div1_3{
     display: inline-block;
-    padding-left: 86px;
-}
-.div2_4{
-    display: inline-block;
-    padding-left: 48px;
+    padding-left: 56px;
 }
 
 button{
@@ -107,7 +103,7 @@ h3{
 /*nav*/
 
 #nav{
-    position: fixed;
+    position: fixed;  
 }
 
 #nav_1{
@@ -117,4 +113,4 @@ h3{
 
 .p{
     margin-left: 15px;
-}
+

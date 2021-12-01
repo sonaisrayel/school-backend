@@ -67,14 +67,14 @@ html(lang="en")
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                h3 ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ                  
+                    h3 ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ                  
                     <br/>
                     .profession-div_1
                         .a 
                             table(class='profession-table')                           
                                 tr
                                     th(class='profession-th') #
-                                    each val in profession 
+                                    each val in profession
                                         td(class='profession-td')= val.id 
                                 tr
                                     th(class='profession-th') ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
@@ -94,25 +94,8 @@ html(lang="en")
                                         td(class='profession-td')= val.pay
                     hr
                     br
-                    .div_2
-                        h3 About Me
-                        hr 
-                        p
-                            label(for="")
-                                i(class="fa fa-book") Education
-                            input(type="text" class="profession-input")
-                        p
-                            label(for="") 
-                                i(class="fa fa-map-marker") Location
-                            input(type="text" class="profession-input")
-                        p
-                            label(for="")
-                                i(class="fa fa-pencil") Skills 
-                            input(type="text" class="profession-input")
-                        p
-                            i(class="fa fa-file-text-o") Notes
-                            input(type="text" class="profession-input")                    
-                    
+                
+                       
                     
                     .profession-div_3
                         button(type="button" class="profession-button" href="#") View

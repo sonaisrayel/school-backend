@@ -16,7 +16,7 @@
 
 .profession-div_1{
     display: flex;
-    margin-left: 100px;
+    margin-left: 120px;
 }
 
 .profession-table{
@@ -27,7 +27,7 @@
     padding:  7px;
 }
 .profession-th{
-    padding:  7px;
+    padding:  25px;
 }
   
 .profession-input{

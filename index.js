@@ -13,7 +13,7 @@ const mongoDb = require('./libs/db')
 mongoDb.connect();
 const {  getStudents,createStudent,createStudentView,getStudent } = require("./controllers/student-controller");
 
-const {  getProfessions, getProfession,createProfessionView,deleteProfession, createProfession,  editProfessionView, editProfession  } = require("./controllers/profession-controller");
+const {  getProfessions, getProfession,createProfessionView,deleteProfession, createProfession,  editProfession  } = require("./controllers/profession-controller");
 
 //const { getProfessions, getProfession,createProfessionView,deleteProfession, createProfession } = require("./controllers/profession-controller");
 //const { getStudents, getStudent,createStudent,createStudentView,editStudent, editStudentView } = require("./controllers/student-controller");
@@ -57,8 +57,8 @@ app.get('/professions/:id', getProfession);
 app.get('/professions/create', createProfessionView);
 app.get('/professions/delete/:id', deleteProfession);
 app.post('/professions',createProfession);
-app.get('/professions/edit/:id', editProfessionView);
-app.post('/professions/edit',editProfession);
+//app.get('/professions/edit/:id', editProfessionView);
+//app.post('/professions/edit',editProfession);
 
 
 app.listen(port, () => {

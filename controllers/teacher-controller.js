@@ -2,7 +2,7 @@ const teacher = require("../models/teacher.json");
 const fs = require('fs');
 
 async function getTeachers(req, res) {
-    res.render('teacher-list', { teacher: teacher })
+    res.render('teacher/teacher-list', { teacher: teacher })
 }
 
 async function getTeacher(req, res) {
@@ -10,11 +10,11 @@ async function getTeacher(req, res) {
     const newTeacher = teacher.filter((teach) => {
         return teach.id == id
     });    
-    res.render('teacher', { teacher: newTeacher })    
+    res.render('teacher/teacher', { teacher: newTeacher })    
 }
 
 async function createTeacherView(req,res){
-    res.render('teacher-create')
+    res.render('teacher/teacher-create')
 }
 
 async function createTeacher(req,res){

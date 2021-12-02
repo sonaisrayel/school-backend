@@ -1,7 +1,3 @@
--var title = "ԴԱՍԱԽՈՍԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ"
--var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
-
-doctype html
 html(lang="en")
     head
         meta(charset="utf-8")
@@ -14,6 +10,7 @@ html(lang="en")
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
+        
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
             a(class="navbar-brand col-sm-3 col-md-2 mr-0" href="#") ՀԱՄԱԼՍԱՐԱՆ
@@ -22,7 +19,7 @@ html(lang="en")
                 li(class="nav-item text-nowrap")
                     a(href="#").nav-link ԴՈՒՐՍ ԳԱԼ
 
-        .container-fluid
+        .container-fluid  
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
@@ -64,64 +61,60 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    h3 ԴԱՍԱԽՈՍԻ ԱՆՁՆԱԿԱՆ ՏՎՅԱԼՆԵՐ                  
-                    <br/>
-                    .teacher-div_1
-                        .a   
+                form(action="/teachers/edit" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                    .div_1
+                        h4 ԱՎԵԼԱՑՆԵԼ
+                        h2 ԴԱՍԱԽՈՍ
 
-                            img(src="/assets/images/boy.jpg" class="teacher-img" alt="")
+                        hr
+                    .form                        
+                        .div2_6
+                        input.input(type='hidden' name="id" value= teacher[0].id autocomplete='off' class='create-input')    
+                    .form
+                        .div1
+                        label(for='') ԱՆՈՒՆ
+                        .div2_1
+                        input.input(type='text' name="name" value= teacher[0].name  autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ԱԶԳԱՆՈՒՆ
+                        .div2_2
+                        input.input(type='text' name="surname" value= teacher[0].surname autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՀԱՅՐԱՆՈՒՆ
+                        .div2_3
+                        input.input(type='text' name="middlename" value= teacher[0].middlename autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՍԵՌ
+                        .div2_4
+                        input.input(type='radio' name='gen' id='female')
+                        label(for="female")  Իգական
+                        input.input(type='radio' name='gen' id='male')
+                        label(for="male")  Արական
 
-                            br
-                            p.p2 
-                                b= teacher.name                                
-                                b= teacher.surname 
-                        .b
-                            table(class='teacher-table')                           
-                                tr
-                                    th(class='teacher-th') ՀԱՅՐԱՆՈՒՆ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.middlename
-                                tr
-                                    th(class='teacher-th') ՍԵՌ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.gender
-                                tr
-                                    th(class='teacher-th') ԾՆ․ԱՄՍԱԹԻՎ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.birthday
-                                tr
-                                    th(class='teacher-th') ՀԵՌԱԽՈՍ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.mobile
-                                tr
-                                    th(class='teacher-th') Էլ․ՀԱՍՑԵ
-                                    each val in teacher                        
-                                        td(class='teacher-td')= val.email
-                    hr
+                    .form
+                        .div1
+                        label(for='') ԾՆ․ԱՄՍԱԹԻՎ
+                        .div2_5
+                        input.input(type='text' name="birthday" value= teacher[0].birthday autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՀԵՌԱԽՈՍ
+                        .div2_6
+                        input.input(type='tel' name="mobile" value= teacher[0].mobile autocomplete='off' class='create-input')                    
+                    .form
+                        .div1
+                        label(for='') Էլ․ՀԱՍՑԵ
+                        .div2_7
+                        input.input(type='email' name="email" autocomplete='off' value= teacher[0].email class='create-input')
+
                     br
-                    .div_2
-                        h3 About Me
-                        hr 
-                        p
-                            label(for="")
-                                i(class="fa fa-book") Education
-                            input(type="text" class="teacher-input")
-                        p
-                            label(for="") 
-                                i(class="fa fa-map-marker") Location
-                            input(type="text" class="teacher-input")
-                        p
-                            label(for="")
-                                i(class="fa fa-pencil") Skills 
-                            input(type="text" class="teacher-input")
-                        p
-                            i(class="fa fa-file-text-o") Notes
-                            input(type="text" class="teacher-input")                    
-                    
-                    
-                    .teacher-div_3
-                        button(type="button" class="teacher-button" href="#") View
-                        button(type="button" class="teacher-button" href="#") Edit
-                        br
-                    a(href="/teachers" class="div_3-a") Վերադառնալ ցուցակին 
+                    .div3
+                        button(type='submit' class='create-button' ) ՓՈՓՈԽԵԼ
+                    hr
+                    a(href="/teachers") Վերադառնալ ցուցակին
+
+
+                                           

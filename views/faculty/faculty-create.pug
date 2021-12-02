@@ -76,17 +76,17 @@ html(lang="en")
                         .div1
                             label(for='') ԱՆՎԱՆՈՒՄ
                         .div1_1
-                            input.input(type='text' id="faculty" value="" )
+                            input.input(type='text' id="faculty" name="faculty"  value="" )
                     .form
                         .div1
                         label(for='') ՈՒՍ ՏԱՐԻՆԵՐԸ
                         .div1_2
-                        input.input(type='text' id="study_year"  value="" autocomplete='off' class='create-input')
+                        input.input(type='text' id="year" name="year"  value="" autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՈՒՍ ՎՃԱՐ
                         .div1_3
-                        input.input(type='text' id="pay"  value="" autocomplete='off' class='create-input')
+                        input.input(type='text' id="fee"  value="" name="fee" autocomplete='off' class='create-input')
                     br
                     .div_2_button
                         button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ

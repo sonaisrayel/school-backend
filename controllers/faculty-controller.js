@@ -19,8 +19,8 @@ async function createFacultyView(req, res){
 }
 
 async function createFaculty (req, res){
-    const { faculty,pay,study_year } = req.body
-    let fac = await Faculty.create({ faculty,pay,study_year })
+    const { faculty,fee,year } = req.body
+    let fac = await Faculty.create({ faculty,fee,year })
     let faculties = await Faculty.find()
     res.render('faculty/faculty-list', { faculty: faculties })
 }

@@ -1,6 +1,6 @@
 function validation(e) {
     let student_name = document.getElementById("name");
-    console.log(student_name);
+   
 
     if (!student_name.value) {
         console.log(student_name.value);
@@ -10,7 +10,7 @@ function validation(e) {
 
 
     let student_surname = document.getElementById("surname");
-    console.log(student_surname);
+ 
 
 
     if (!student_surname.value) {
@@ -19,7 +19,7 @@ function validation(e) {
     }
 
     let student_hayranun = document.getElementById("hayranun");
-    console.log(student_hayranun);
+ 
 
 
     if (!student_hayranun.value) {
@@ -30,7 +30,7 @@ function validation(e) {
     }
 
     let student_tiv = document.getElementById("tiv");
-    console.log(student_tiv);
+   
 
 
     if (!student_tiv.value) {
@@ -40,7 +40,7 @@ function validation(e) {
 
     }
     let student_tel = document.getElementById("tel");
-    console.log(student_tel);
+    
 
 
     if (!student_tel.value) {
@@ -50,8 +50,7 @@ function validation(e) {
 
     }
     let student_email = document.getElementById("email");
-    console.log(student_email);
-
+  
 
     if (!student_email.value) {
         console.log(student_email. value);

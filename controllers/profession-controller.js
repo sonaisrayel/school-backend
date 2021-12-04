@@ -31,10 +31,10 @@ async function deleteProfession(req,res){
     const { id } = req.params;
     let profession  = profession.filter(prof => prof.id == id);
 }
-async function editProfessionView(req, res) {
-     
+async function editProfessionView(req, res) {     
     const { id } = req.params;
     let pro = profession.filter(prof => prof.id == id);
+    console.log(111,pro);
     res.render('profession/profession-edit', { profession: pro });
 }
     

@@ -1,13 +1,10 @@
--var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
-
-doctype html
 html(lang="en")
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-        link(rel="stylesheet" href="/assets/css/student.css"  type='text/css')        
+        link(rel="stylesheet" href="/assets/css/teacher.css"  type='text/css')        
         title= title
         
         // Bootstrap core CSS
@@ -26,11 +23,12 @@ html(lang="en")
             .row
                 nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
-                        ul(class="nav flex-column")
+                        ul(class="nav flex-column" id="nav")
                             li.nav-item
-                                a(class="nav-link active" href="#")
+                                p(class="p")
                                     span(data-feather="home")
-                                    | ՑՈՒՑԱԿ  
+                                    | ՑՈՒՑԱԿ
+                                    hr  
                             li.nav-item
                                 a(href="/professions").nav-link
                                     span(data-feather="file") 
@@ -48,10 +46,9 @@ html(lang="en")
                                     span(data-feather="shopping-cart")
                                     | ԴԱՍԱԽՈՍՆԵՐ
                         h6(class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted")
-                            span= ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ
                             a(class="d-flex align-items-center text-muted" href="#")
                                 span(data-feather="plus-circle")
-                        ul(class="nav flex-column mb-2")
+                        ul(class="nav flex-column mb-2" id="nav_1")
                             li.nav-item
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
@@ -64,72 +61,60 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                form(action="/students" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                form(action="/teachers/edit" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
                     .div_1
                         h4 ԱՎԵԼԱՑՆԵԼ
-                        h2 ՈՒՍԱՆՈՂ
+                        h2 ԴԱՍԱԽՈՍ
 
                         hr
+                    .form                        
+                        .div2_6
+                        input.input(type='hidden' name="id" value= teacher[0].id autocomplete='off' class='create-input')    
                     .form
                         .div1
                         label(for='') ԱՆՈՒՆ
-                        span(id="bubu" style="display:none") gir anund
                         .div2_1
-                        input.input(type='text' id="name" value=""  name='name' autocomplete='off' class='create-input')
+                        input.input(type='text' name="name" value= teacher[0].name  autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
                         .div2_2
-
-                        input.input(type='text' id='surname' name="surname" value="" autocomplete='off' class='create-input')
-
-
+                        input.input(type='text' name="surname" value= teacher[0].surname autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
                         .div2_3
-
-                        input.input(type='text' id="hayranun"  value="" autocomplete='off' class='create-input')
-
+                        input.input(type='text' name="middlename" value= teacher[0].middlename autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՍԵՌ
                         .div2_4
-                        input.input(type='radio' name='gender' id='female')
+                        input.input(type='radio' name='gen' id='female')
                         label(for="female")  Իգական
-                        input.input(type='radio' name='gender' id='male')
+                        input.input(type='radio' name='gen' id='male')
                         label(for="male")  Արական
 
                     .form
                         .div1
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
                         .div2_5
-                        input.input(type='text'  id="tiv"  value="" autocomplete='off' class='create-input')
-
-
+                        input.input(type='text' name="birthday" value= teacher[0].birthday autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
                         .div2_6
-
-                        input.input(type='tel' id="tel"  value="" name='mobile' autocomplete='off' class='create-input')
-
-                        
-
+                        input.input(type='tel' name="mobile" value= teacher[0].mobile autocomplete='off' class='create-input')                    
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
-
-                        input.input(type='email'  id="email"  value="" name='email' autocomplete='off' class='create-input')
-
+                        input.input(type='email' name="email" autocomplete='off' value= teacher[0].email class='create-input')
 
                     br
                     .div3
-                        button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ
+                        button(type='submit' class='create-button' ) ՓՈՓՈԽԵԼ
                     hr
-                    a(href="/students") Վերադառնալ ցուցակին
-        script(type="text/javascript"  src="/assets/js/student.js")
+                    a(href="/teachers") Վերադառնալ ցուցակին
 
 
                                            

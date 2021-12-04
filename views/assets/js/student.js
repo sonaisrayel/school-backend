@@ -1,10 +1,8 @@
-function validation(e) {
+function validation() {
     let student_name = document.getElementById("name");
-    console.log(student_name);
 
     if (!student_name.value) {
-        console.log(student_name.value);
-        student_name.style.backgroundColor = "red"
+        student_name.style.borderColor = "red"
         student_name.value = "Gri anund"
     }
 
@@ -14,7 +12,7 @@ function validation(e) {
 
 
     if (!student_surname.value) {
-        student_surname.style.backgroundColor = "red"
+        student_surname.style.borderColor = "red"
         student_surname.value = "Gri azganunt"
     }
 
@@ -24,7 +22,7 @@ function validation(e) {
 
     if (!student_hayranun.value) {
         console.log(student_hayranun.value);
-        student_hayranun.style.backgroundColor = "red"
+        student_hayranun.style.borderColor = "red"
         student_hayranun.value = "Gri der hayranun@"
 
     }
@@ -35,7 +33,7 @@ function validation(e) {
 
     if (!student_tiv.value) {
         console.log(student_tiv. value);
-        student_tiv.style.backgroundColor = "red"
+        student_tiv.style.borderColor = "red"
         student_tiv.value = "Gri der cnndyan tiv@"
 
     }
@@ -45,17 +43,14 @@ function validation(e) {
 
     if (!student_tel.value) {
         console.log(student_tel. value);
-        student_tel.style.backgroundColor = "red"
+        student_tel.style.borderColor = "red"
         student_tel.value = "Greq dzer heraxosahamar@"
 
     }
     let student_email = document.getElementById("email");
-    console.log(student_email);
-
-
     if (!student_email.value) {
         console.log(student_email. value);
-        student_email.style.backgroundColor = "red"
+        student_email.style.borderColor = "red"
         student_email.value = "Greq dzer gmail"
 
     }

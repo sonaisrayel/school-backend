@@ -27,7 +27,7 @@ html(lang="en")
 
         .container-fluid
             .row
-                nav(class="col-md-2 d-none d-md-block bg-light sidebar" id="navv")
+                nav(class="col-md-2 d-none d-md-block bg-light sidebar")
                     .sidebar-sticky
                         ul(class="nav flex-column" id="nav")
                             li.nav-item
@@ -36,9 +36,10 @@ html(lang="en")
                                     | ՑՈՒՑԱԿ  
                                     hr
                             li.nav-item
-                                a(href="/professions").nav-link
-                                    span(data-feather="file") 
+                                a(href="/professions" ).nav-link
+                                    span(data-feather="file" ) 
                                     | ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ
+                                    
                             li.nav-item
                                 a(href="/faculties").nav-link
                                     span(data-feather="shopping-cart")
@@ -70,7 +71,7 @@ html(lang="en")
                 main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
                     div 
                         h3(class="list-fac") ՖԱԿՈՒԼՏԵՏ
-                        a(class='craete-button' href="/faculty/create" id="kochak") ԱՎԵԼԱՑՆԵԼ ՖԱԿՈՒԼՏԵՏ
+                        a(class='craete-button' href="/facultiy/create" id="kochak") ԱՎԵԼԱՑՆԵԼ ՖԱԿՈՒԼՏԵՏ
                     <br/>
                     .table-responsive
                         table(class="table table-bordered ")
@@ -78,22 +79,20 @@ html(lang="en")
                                 tr
                                     th #
                                     th ԱՆՎԱՆՈՒՄ
-                                    th ԲԱԺԻՆ
-                                    th ՍՈՎՈՐԵԼՈՒ ՏԱՐԻՆԵՐԸ
-                                    th ՈՒՍՄԱՆ ՎՃԱՐ
+                                    th ՈՒՍ ՏԱՐԻՆԵՐԸ
+                                    th ՈՒՍ ՎՃԱՐ
                                     th
                             tbody.table-hover
                              each val in faculty
                                 tr  
                                     td= val.id
-                                    td= val.profession
                                     td= val.faculty
-                                    td= val.study_year
-                                    td= val.pay
+                                    td= val.year
+                                    td= val.fee
                                     td 
                                         a(type="button" class="btn btn-primary" href="/faculties/" + val.id) 
                                             i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="#" + val.id)
+                                        a(type="button" class="btn btn-info" href="/faculties/edit/" + val.id)
                                             i(class="fa fa-edit")
                                         a(type="button" class="btn btn-danger" href="#" + val.id)
                                             i(class="fa fa-trash-o")

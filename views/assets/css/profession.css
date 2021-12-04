@@ -27,7 +27,7 @@
     padding:  7px;
 }
 .profession-th{
-    padding:  7px;
+    padding:  25px;
 }
   
 .profession-input{
@@ -110,12 +110,17 @@ h3{
     border-radius: 5px;
     margin-left: 500px;
 }
+/*nav*/
 
-.create-input{
-    border: solid 1px rgb(175, 173, 173);
-    border-radius: 5px;
-    width: 250px;
+#nav{
+    position: fixed;
 }
-.create-create{
-    margin-left: 570px;
+
+#nav_1{
+    position: fixed;
+    margin-top: 210px;
+}
+
+.p{
+    margin-left: 15px;
 }

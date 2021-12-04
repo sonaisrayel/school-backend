@@ -2,19 +2,18 @@ const teacher = require("../models/teacher.json");
 const fs = require('fs');
 
 async function getTeachers(req, res) {
-    res.render('teacher-list', { teacher: teacher })
+    res.render('teacher/teacher-list', { teacher: teacher })
 }
 
 async function getTeacher(req, res) {
     const { id } = req.params;
     const newTeacher = teacher.filter((teach) => {
-        return teach.id == id
-    });    
-    res.render('teacher', { teacher: newTeacher })    
+        return teach.id == id});    
+    res.render('teacher/teacher', { teacher: newTeacher })    
 }
 
 async function createTeacherView(req,res){
-    res.render('teacher-create')
+    res.render('teacher/teacher-create')
 }
 
 async function createTeacher(req,res){
@@ -23,10 +22,22 @@ async function createTeacher(req,res){
     newTeacher.id = id;
     teacher.push(newTeacher);
 }
+ async function editTeacherView(req, res) {
+     const { id } = req.params;
+     let teach = teacher.filter(teach => teach.id == id);
+     res.render('teacher/teacher-edit', { teacher: teach });
+ }
+
+ async function editTeacher(req, res) {
+     console.log(req.body);
+ }
+
 
 module.exports = {
     getTeachers,
     getTeacher,
     createTeacher,
-    createTeacherView
+    createTeacherView,
+    editTeacherView,
+    editTeacher
 }

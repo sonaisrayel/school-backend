@@ -1,23 +1,40 @@
-const faculty = require("../models/profession.json");
+//const faculty = require("../models/faculty.json");
+const Faculty = require("../models/faculty-model");
+const fs = require('fs');
+
 
 async function getFaculties(req, res) {
-    res.render('faculty/faculty-list',{ faculty:faculty });
+    let faculty = await Faculty.find()
+    res.render('faculty/faculty-list', { faculty: faculty });
 }
 
 async function getFaculty(req, res) {
     const { id } = req.params;
-    const newFaculty = faculty.filter((fac) => {
-        return fac.id == id
-    });    
-    res.render('faculty/faculty', { faculty: newFaculty })    
+    let newFaculty = await Faculty.findOne({ _id: id });
+    res.render('faculty/faculty', { faculty: newFaculty })
 }
 
-async function createFacultyView(req, res){
+async function createFacultyView(req, res) {
     res.render('faculty/faculty-create')
+}
+
+async function createFaculty(req, res) {
+    const { faculty, fee, year } = req.body
+    let fac = await Faculty.create({ faculty, fee, year })
+    let faculties = await Faculty.find()
+    res.render('faculty/faculty-list', { faculty: faculties })
+}
+
+async function editFaculty(req, res) {
+    const { id } = req.params;
+    let newFaculty = await Faculty.findOne({ _id: id });
+    res.render('faculty/faculty-create', { faculty: newFaculty })
 }
 
 module.exports = {
     getFaculties,
     getFaculty,
-    createFacultyView
+    createFacultyView,
+    createFaculty,
+    editFaculty
 }

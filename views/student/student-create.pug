@@ -1,18 +1,15 @@
 -var ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆ"
 
 doctype html
-
 html(lang="en")
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         meta(name="description" content="")
         meta(name="author" content="")
-                
+        link(rel="stylesheet" href="/assets/css/student.css"  type='text/css')        
         title= title
-
-        link(rel="stylesheet" href="/assets/css/faculty.css"  type='text/css')
-
+        
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
@@ -67,29 +64,72 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                form(action="/faculties" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                form(action="/students" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
                     .div_1
                         h4 ԱՎԵԼԱՑՆԵԼ
-                        h2 ՖԱԿՈՒԼՏԵՏ
+                        h2 ՈՒՍԱՆՈՂ
+
                         hr
                     .form
                         .div1
-                            label(for='') ԱՆՎԱՆՈՒՄ
-                        .div1_1
-                            input.input(type='text' id="faculty" name="faculty"  value="" )
+                        label(for='') ԱՆՈՒՆ
+                        span(id="bubu" style="display:none") gir anund
+                        .div2_1
+                        input.input(type='text' id="name" value=""  name='name' autocomplete='off' class='create-input')
                     .form
                         .div1
-                        label(for='') ՈՒՍ ՏԱՐԻՆԵՐԸ
-                        .div1_2
-                        input.input(type='text' id="year" name="year"  value="" autocomplete='off' class='create-input')
+                        label(for='') ԱԶԳԱՆՈՒՆ
+                        .div2_2
+
+                        input.input(type='text' id='surname' name="surname" value="" autocomplete='off' class='create-input')
+
+
                     .form
                         .div1
-                        label(for='') ՈՒՍ ՎՃԱՐ
-                        .div1_3
-                        input.input(type='text' id="fee"  value="" name="fee" autocomplete='off' class='create-input')
+                        label(for='') ՀԱՅՐԱՆՈՒՆ
+                        .div2_3
+
+                        input.input(type='text' id="hayranun"  value="" autocomplete='off' class='create-input')
+
+                    .form
+                        .div1
+                        label(for='') ՍԵՌ
+                        .div2_4
+                        input.input(type='radio' name='gender' id='female')
+                        label(for="female")  Իգական
+                        input.input(type='radio' name='gender' id='male')
+                        label(for="male")  Արական
+
+                    .form
+                        .div1
+                        label(for='') ԾՆ․ԱՄՍԱԹԻՎ
+                        .div2_5
+                        input.input(type='text'  id="tiv"  value="" autocomplete='off' class='create-input')
+
+
+                    .form
+                        .div1
+                        label(for='') ՀԵՌԱԽՈՍ
+                        .div2_6
+
+                        input.input(type='tel' id="tel"  value="" name='mobile' autocomplete='off' class='create-input')
+
+                        
+
+                    .form
+                        .div1
+                        label(for='') Էլ․ՀԱՍՑԵ
+                        .div2_7
+
+                        input.input(type='email'  id="email"  value="" name='email' autocomplete='off' class='create-input')
+
+
                     br
-                    .div_2_button
-                        button(type='submit' class='create-button' onclick='validation(event)') ԱՎԵԼԱՑՆԵԼ
+                    .div3
+                        button(type='submit' class='create-button' onclick='validation()') ԱՎԵԼԱՑՆԵԼ
                     hr
-                    a(href="/faculties" class="het") Վերադառնալ ցուցակին
-        //script(type="text/javascript" src="/assets/js/faculty.js)
+                    a(href="/students") Վերադառնալ ցուցակին
+        script(type="text/javascript"  src="/assets/js/student.js")
+
+
+                                           

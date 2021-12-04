@@ -70,25 +70,17 @@ html(lang="en")
                         .a 
                             table(class='faculty-table')                           
                                 tr
-                                    th(class='faculty-th') #
-                                    each val in faculty
-                                        td(class='faculty-td')= val.id 
+                                    th(class='faculty-th') #                                 
+                                        td(class='faculty-td')= faculty.id 
                                 tr
-                                    th(class='faculty-th') ԱՆՎԱՆՈՒՄ
-                                    each val in faculty
-                                        td(class='faculty-td')= val.profession
+                                    th(class='faculty-th') ԲԱԺԻՆ                                  
+                                        td(class='faculty-td')= faculty.faculty
                                 tr
-                                    th(class='faculty-th') ԲԱԺԻՆ
-                                    each val in faculty
-                                        td(class='faculty-td')= val.faculty
+                                    th(class='faculty-th') ՈՒՍ ՏԱՐԻՆԵՐԸ                                    
+                                        td(class='faculty-td')= faculty.year
                                 tr
-                                    th(class='faculty-th') ՍՈՎՈՐԵԼՈՒ ՏԱՐԻՆԵՐԸ
-                                    each val in faculty
-                                        td(class='faculty-td')= val.study_year
-                                tr
-                                    th(class='faculty-th') ՈՒՍՄԱՆ ՎՃԱՐ
-                                    each val in faculty                        
-                                        td(class='faculty-td')= val.pay
+                                    th(class='faculty-th') ՈՒՍՄԱՆ ՎՃԱՐ                                                       
+                                        td(class='faculty-td')= faculty.fee
                     hr
                     br
                     .div_2

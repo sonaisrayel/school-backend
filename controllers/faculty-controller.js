@@ -39,6 +39,7 @@ async function deleteFaculty( req, res ){
     res.render('faculty/faculty-list', { faculty: newFaculty });
 };
 
+
 module.exports = {
     getFaculties,
     getFaculty,

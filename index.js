@@ -56,6 +56,7 @@ app.get('/faculties/delete/:id', deleteFaculty);
 
 
 
+
 //profession
 app.get('/professions', getProfessions);
 app.get('/professions/:id', getProfession);

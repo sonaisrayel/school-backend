@@ -90,12 +90,13 @@ html(lang="en")
                                     td= val.year
                                     td= val.fee
                                     td 
-                                        a(type="button" class="btn btn-primary" href="/faculties/" + val.id) 
+                                        a(type="button" class="btn btn-primary" href=`/faculties/${val.id}`) 
                                             i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href="/faculties/edit/" + val.id)
+                                        a(type="button" class="btn btn-info" href=`/faculties/edit/${val.id}`)
                                             i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="#" + val.id)
+                                        a(type="button" class="btn btn-danger" href=`/faculties/delete/${val._id}`)
                                             i(class="fa fa-trash-o")
+                                            
                                
                         ul(class="pagination justify-content-end")
                             li.page-item

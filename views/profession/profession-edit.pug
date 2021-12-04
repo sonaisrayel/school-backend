@@ -14,7 +14,6 @@ html(lang="en")
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-        link(rel="stylesheet" href="dashboard.css")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
@@ -57,7 +56,8 @@ html(lang="en")
                             li.nav-item
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
-                                    | ԸՆԹԱՑԻԿ ԱՄԻՍ
+                                    | ԸՆԹԱՑԻԿ ԱՄԻՍ                        
+                           
                             li.nav-item
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
@@ -66,47 +66,39 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                main(role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4")
-                    div
-                       h3(class= 'list-pro') ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆՆԵՐ
-                       a(class='craete-button' href="/professions/create" ) ԱՎԵԼԱՑՆԵԼ ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
-                    <br/>
-                    .table-responsive
-                        table(class="table table-bordered ")
-                            thead.thead-dark
-                                tr
-                                    th #
-                                    th ԱՆՎԱՆՈՒՄ
-                                    th ԲԱԺԻՆ
-                                    th ՈՒՍ․ՏԱՐԻ
-                                    th ՈՒՍ. ՎՃԱՐ
-                                    th
-                            tbody.table-hover
-                            each val in profession
-                                tr  
-                                
-                                    td=val.id
-                                    td=val.profession
-                                    td=val.faculty
-                                    td=val.study_year
-                                    td=val.pay
-                                    td 
+                form(action="/profession/edit" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                    .div_1
+                        h4 ԱՎԵԼԱՑՆԵԼ
+                        h2 ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
+                        hr
+                    .form                        
+                        .div2_6
+                        input.input(type='hidden' name="id" value= profession[0].id autocomplete='off' class='create-input')    
+                    .form
+                        .div1
+                        label(for='') ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
+                        .div2_1
+                        input.input(type='text' name="profession" value= profession[0].profession  autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՖԱԿՈՒԼՏԵՏ
+                        .div2_2
+                        input.input(type='text' name="faculty" value= profession[0].faculty autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՈՒՍՄԱՆ ՎՃԱՐ
+                        .div2_3
+                        input.input(type='text' name="pay" value= profession[0].pay autocomplete='off' class='create-input')
+                    .form
+                        .div1
+                        label(for='') ՈՒՍ․ ՏԱՐԻ
+                        .div2_5 
+                       input.input(type='text' name="study_year" value= profession[0].study_year autocomplete='off' class='create-input')
+                    br
+                    .div3
+                        button(type='submit' class='create-button' ) ՓՈՓՈԽԵԼ
+                    hr
+                    a(href="/professions") Վերադառնալ ցուցակին
 
-                                        a(type="button" class="btn btn-primary" href=`/professions/${ val._id}`) 
-                                                i(class="fa fa-bars")
-                                        a(type="button" class="btn btn-info" href=`/professions/edit/${ val._id}`)
-                                            i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="#" + val.id)
-                                            i(class="fa fa-trash-o")
-                                tr                                                                
-                        ul(class="pagination justify-content-end")
-                            li.page-item
-                                a(href="#").page-link Previous
-                            li.page-item
-                                a(href="#").page-link 1
-                            li.page-item
-                                a(href="#").page-link 2
-                            li.page-item
-                                a(href="#").page-link 3
-                            li.page-item
-                                a(href="#").page-link Next
+
+                                           

@@ -51,6 +51,7 @@ function validation() {
     }
     let teacher_email = document.getElementById("email");
     console.log(teacher_email);
+    
 
 
     if (!teacher_email.value) {

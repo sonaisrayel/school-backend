@@ -74,17 +74,17 @@ html(lang="en")
                         .div1
                         label(for='') ԱՆՈՒՆ
                         .div2_1
-                        input.input(type='text' autocomplete='off' class='create-input')
+                        input.input(type='text' id="name" value=""  name='name' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
                         .div2_2
-                        input.input(type='text' autocomplete='off' class='create-input')
+                        input.input(type='text' id='surname' name="surname" value="" autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
                         .div2_3
-                        input.input(type='text' autocomplete='off' class='create-input')
+                        input.input(type='text' id="hayranun"  value="" autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՍԵՌ
@@ -98,24 +98,25 @@ html(lang="en")
                         .div1
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
                         .div2_5
-                        input.input(type='text' autocomplete='off' class='create-input')
+                        input.input(type='text'  id="tiv"  value="" autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
                         .div2_6
-                        input.input(type='tel' autocomplete='off' class='create-input')
+                        input.input(type='tel' id="tel"  value="" name='mobile' autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
-                        input.input(type='email' autocomplete='off' class='create-input')
+                        input.input(type='email'  id="email"  value="" name='email' autocomplete='off' class='create-input')
 
 
                     br
                     .div3
-                        button(type='submit' class='create-button' ) ԱՎԵԼԱՑՆԵԼ
+                        button(type='submit' class='create-button' onclick='validation()' ) ԱՎԵԼԱՑՆԵԼ
                     hr
                     a(href="/teachers") Վերադառնալ ցուցակին
+            script(type="text/javascript"  src="/assets/js/teacher.js")
 
 
                                            

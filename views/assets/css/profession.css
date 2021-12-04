@@ -1,3 +1,4 @@
+/* faculty-list */
 
 .craete-button{
     padding: 7px 15px;
@@ -8,29 +9,28 @@
     margin-left: 700px;
 }
 
-
-.list-pro{
+.list-fac{
     display: inline-flex;
 }
 
-
-.profession-div_1{
+/* faculty */
+.faculty-div_1{
     display: flex;
-    margin-left: 120px;
+    margin-left: 100px;
 }
 
-.profession-table{
+.faculty-table{
     margin-left: 150px; 
 }
   
-.profession-td{
+.faculty-td{
     padding:  7px;
 }
-.profession-th{
-    padding:  25px;
+.faculty-th{
+    padding:  7px;
 }
   
-.profession-input{
+.faculty-input{
     width: 260px;
     display: block;
     border-top: none;
@@ -38,7 +38,7 @@
     border-right: none;
  }
   
-.profession-button{
+.faculty-button{
     display: inline-block;
     padding: 5px 20px;
     color: #007bff;
@@ -46,7 +46,7 @@
     border: 1px solid #dee2e6;
 }
   
-.profession-div_3{
+.faculty-div_3{
     margin-left: 84%;
 }
 .div_3-a{
@@ -70,22 +70,18 @@
     display: inline;
 }
 
-.div2_1{
+.div1_1{
     margin-top: 50px;
     display: inline-block;
     padding-left: 50px;
 }
-.div2_2{
+.div1_2{
     display: inline-block;
-    padding-left: 86px;
+    padding-left: 16px;
 }
-.div2_3{
+.div1_3{
     display: inline-block;
-    padding-left: 86px;
-}
-.div2_4{
-    display: inline-block;
-    padding-left: 48px;
+    padding-left: 56px;
 }
 
 button{
@@ -104,18 +100,10 @@ h3{
 .het{
     color: black;
 }
-.craete-button{
-    padding: 7px 15px;
-    color: #fff;
-    background-color: #343a40;
-    border-color: #454d55;
-    border-radius: 5px;
-    margin-left: 500px;
-}
 /*nav*/
 
 #nav{
-    position: fixed;
+    position: fixed;  
 }
 
 #nav_1{
@@ -125,4 +113,4 @@ h3{
 
 .p{
     margin-left: 15px;
-}
+

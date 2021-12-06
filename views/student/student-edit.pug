@@ -70,22 +70,22 @@ html(lang="en")
                         hr
                     .form                        
                         .div2_6
-                        input.input(type='hidden' name="id" value= student[0].id autocomplete='off' class='create-input')    
+                        input.input(type='hidden' name="id" value= student._id autocomplete='off' class='create-input')    
                     .form
                         .div1
                         label(for='') ԱՆՈՒՆ
                         .div2_1
-                        input.input(type='text' name="name" value= student[0].name  autocomplete='off' class='create-input')
+                        input.input(type='text' name="name" value= student.name  autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
                         .div2_2
-                        input.input(type='text' name="surname" value= student[0].surname autocomplete='off' class='create-input')
+                        input.input(type='text' name="surname" value= student.surname autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
                         .div2_3
-                        input.input(type='text' name="middlename" value= student[0].middlename autocomplete='off' class='create-input')
+                        input.input(type='text' name="middlename" value= student.middlename autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՍԵՌ
@@ -99,17 +99,17 @@ html(lang="en")
                         .div1
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
                         .div2_5
-                        input.input(type='text' name="birthday" value= student[0].birthday autocomplete='off' class='create-input')
+                        input.input(type='text' name="birthday" value= student.birthday autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
                         .div2_6
-                        input.input(type='tel' name="mobile" value= student[0].mobile autocomplete='off' class='create-input')                    
+                        input.input(type='tel' name="mobile" value= student.mobile autocomplete='off' class='create-input')                    
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
-                        input.input(type='email' name="email" autocomplete='off' value= student[0].email class='create-input')
+                        input.input(type='email' name="email" autocomplete='off' value= student.email class='create-input')
 
                     br
                     .div3

@@ -17,9 +17,9 @@ async function createProfessionView(req, res) {
 
 async function createProfession(req, res) {
   const { profession, faculty, pay, study_year } = req.body;
-  let professionn = await Profession.create({ profession, faculty, pay, study_year });
+  await Profession.create({ profession, faculty, pay, study_year });
   let professions = await Profession.find();
-  res.render('profession/profession-list', { professionn: professions });
+  res.render('profession/profession-list', { profession: professions });
 }
 
 async function deleteProfession(req, res) {

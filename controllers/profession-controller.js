@@ -15,6 +15,12 @@ async function createProfessionView(req, res) {
   res.render('profession/profession-create');
 }
 
+async function editProfessionView(req, res) {
+  const { id } = req.params;
+  let profession = await Profession.find({ id });
+  res.render('profession/profession-edit', { profession: profession });
+}
+
 async function createProfession(req, res) {
   const { profession, faculty, pay, study_year } = req.body;
   await Profession.create({ profession, faculty, pay, study_year });
@@ -27,14 +33,11 @@ async function deleteProfession(req, res) {
   let profession = profession.filter((prof) => prof.id == id);
 }
 
-async function editProfessionView(req, res) {
-  const { id } = req.params;
-  let profession = await Profession.find({ id });
-  res.render('profession/profession-edit', { profession: profession });
-}
-
 async function editProfession(req, res) {
-  //console.log(req.body);
+  const { id, profession, faculty, pay, study_year } = req.body;
+  await Profession.findOneAndUpdate(id, { profession, faculty, pay, study_year });
+  const professions = await Profession.find();
+  res.render('profession/profession-list', { profession: professions });
 }
 
 module.exports = {

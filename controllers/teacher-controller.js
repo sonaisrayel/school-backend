@@ -1,7 +1,9 @@
-const teacher = require("../models/teacher.json");
+const Teacher = require('../models/teacher-model');
 const fs = require('fs');
 
+
 async function getTeachers(req, res) {
+    let teacher = await Teacher.find();
     res.render('teacher/teacher-list', { teacher: teacher })
 }
 

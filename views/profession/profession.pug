@@ -73,24 +73,19 @@ html(lang="en")
                             table(class='profession-table')                           
                                 tr
                                     th(class='profession-th') #
-                                    each val in profession
-                                        td(class='profession-td')= val.id 
+                                        td(class='profession-td')= profession.id 
                                 tr
                                     th(class='profession-th') ՄԱՍՆԱԳԻՏՈՒԹՅՈՒՆ
-                                    each val in profession
-                                        td(class='profession-td')= val.profession
+                                        td(class='profession-td')= profession.profession
                                 tr
                                     th(class='profession-th') ՖԱԿՈՒԼՏԵՏ
-                                    each val in profession
-                                        td(class='profession-td')= val.faculty
+                                        td(class='profession-td')= profession.faculty
                                 tr
                                     th(class='profession-th') ՈՒՍ․ՏԱՐԻ
-                                    each val in profession
-                                        td(class='profession-td')= val.study_year
+                                        td(class='profession-td')= profession.study_year
                                 tr
                                     th(class='profession-th') ՈՒՍՄԱՆ ՎՃԱՐ
-                                    each val in profession                        
-                                        td(class='profession-td')= val.pay
+                                        td(class='profession-td')= profession.pay
                     hr
                     br
                     .profession-div_3

@@ -38,14 +38,16 @@ async function editProfession(req, res) {
 }
 async function deleteProfession(req, res) {
   const { id } = req.params;
-  let profession = profession.filter((prof) => prof.id == id);
+  await Profession.deleteOne({ id });
+  let newProfession = await Profession.find();
+  res.render('profession/profession-list', { profession: newProfession });
 }
 module.exports = {
   getProfessions,
   getProfession,
   createProfessionView,
   createProfession,
-  deleteProfession,
   editProfessionView,
   editProfession,
+  deleteProfession,
 };

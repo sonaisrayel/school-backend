@@ -1,4 +1,4 @@
-/* faculty-list */
+
 
 .craete-button{
     padding: 7px 15px;
@@ -6,31 +6,31 @@
     background-color: #343a40;
     border-color: #454d55;
     border-radius: 5px;
-    margin-left: 700px;
+    margin-left: 500px;
 }
 
-.list-fac{
+.list-pro{
     display: inline-flex;
 }
 
-/* faculty */
-.faculty-div_1{
+
+.profession-div_1{
     display: flex;
     margin-left: 100px;
 }
 
-.faculty-table{
+.profession-table{
     margin-left: 150px; 
 }
   
-.faculty-td{
+.profession-td{
     padding:  7px;
 }
-.faculty-th{
+.profession-th{
     padding:  7px;
 }
   
-.faculty-input{
+.profession-input{
     width: 260px;
     display: block;
     border-top: none;
@@ -38,7 +38,7 @@
     border-right: none;
  }
   
-.faculty-button{
+.profession-button{
     display: inline-block;
     padding: 5px 20px;
     color: #007bff;
@@ -46,7 +46,7 @@
     border: 1px solid #dee2e6;
 }
   
-.faculty-div_3{
+.profession-div_3{
     margin-left: 84%;
 }
 .div_3-a{
@@ -54,7 +54,6 @@
 }
 
 
-/*Create*/
   input{
     border: solid 1px rgb(175, 173, 173);
     border-radius: 5px;
@@ -114,3 +113,7 @@ h3{
 .p{
     margin-left: 15px;
 
+}
+.create-create {
+    margin-left: 350px;
+}

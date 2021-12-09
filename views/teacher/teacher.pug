@@ -74,30 +74,25 @@ html(lang="en")
 
                             br
                             p.p2 
-                                b= teacher.name                                
-                                b= teacher.surname 
+                                    b= teacher.name                                
+                                    b= teacher.surname 
                         .b
                             table(class='teacher-table')                           
                                 tr
                                     th(class='teacher-th') ՀԱՅՐԱՆՈՒՆ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.middlename
+                                        td(class='teacher-td')= teacher.middlename
                                 tr
-                                    th(class='teacher-th') ՍԵՌ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.gender
+                                    th(class='teacher-th') ՍԵՌ                              
+                                        td(class='teacher-td')= teacher.gender
                                 tr
-                                    th(class='teacher-th') ԾՆ․ԱՄՍԱԹԻՎ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.birthday
+                                    th(class='teacher-th') ԾՆ․ԱՄՍԱԹԻՎ          
+                                        td(class='teacher-td')= teacher.birthday
                                 tr
                                     th(class='teacher-th') ՀԵՌԱԽՈՍ
-                                    each val in teacher
-                                        td(class='teacher-td')= val.mobile
+                                        td(class='teacher-td')= teacher.mobile
                                 tr
-                                    th(class='teacher-th') Էլ․ՀԱՍՑԵ
-                                    each val in teacher                        
-                                        td(class='teacher-td')= val.email
+                                    th(class='teacher-th') Էլ․ՀԱՍՑԵ                     
+                                        td(class='teacher-td')= teacher.email
                     hr
                     br
                     .div_2

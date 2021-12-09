@@ -1,41 +1,53 @@
-
-const profession = require("../models/profession.json");
-const fs = require('fs');
-const Profession = require("../models/profession-model.js")
+const Profession = require('../models/profession-model.js');
 
 async function getProfessions(req, res) {
-    res.render('profession/profession-list', { profession: profession });
+  const profession = await Profession.find();
+  res.render('profession/profession-list', { profession: profession });
 }
 
 async function getProfession(req, res) {
-    const { id } = req.params;
-    const newProfession = profession.filter((pro) => {
-        return pro.id == id
-    });
-    res.render('profession/profession', { profession: newProfession })
+  const { id } = req.params;
+  const profession = await Profession.findOne({ id });
+  res.render('profession/profession', { profession: profession });
+}
+
+async function createProfessionView(req, res) {
+  res.render('profession/profession-create');
+}
+
+async function editProfessionView(req, res) {
+  const { id } = req.params;
+  let profession = await Profession.find({ id });
+  res.render('profession/profession-edit', { profession: profession });
+}
+
+async function createProfession(req, res) {
+  const { profession, faculty, pay, study_year } = req.body;
+  await Profession.create({ profession, faculty, pay, study_year });
+  let professions = await Profession.find();
+  res.render('profession/profession-list', { profession: professions });
 }
 
 
-async function createProfessionView(req, res){
-    res.render('profession/profession-create')
+
+async function editProfession(req, res) {
+  const { id, profession, faculty, pay, study_year } = req.body;
+  await Profession.findOneAndUpdate(id, { profession, faculty, pay, study_year });
+  const professions = await Profession.find();
+  res.render('profession/profession-list', { profession: professions });
 }
-
-async function createProfession(req,res){
-    const {profession,faculty,pay,study_year } = req.body
-    let proff = await Profession.create({profession,faculty,pay,study_year })
-    res.render('profession/profession-list', { profession: proff })
+async function deleteProfession(req, res) {
+  const { id } = req.params;
+  await Profession.deleteOne({ id });
+  let newProfession = await Profession.find();
+  res.render('profession/profession-list', { profession: newProfession });
 }
-
-
-async function deleteProfession(req,res){
-    const { id } = req.params;
-    let profession  = profession.filter(prof => prof.id == id);
-}
-
 module.exports = {
-    getProfessions,
-    getProfession,
-    createProfessionView,
-    createProfession,
-    deleteProfession
-}
+  getProfessions,
+  getProfession,
+  createProfessionView,
+  createProfession,
+  editProfessionView,
+  editProfession,
+  deleteProfession,
+};

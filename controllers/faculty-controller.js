@@ -22,10 +22,10 @@ async function createFaculty(req, res) {
   res.render('faculty/faculty-list', { faculty: faculties });
 }
 
-async function editFaculty(req, res) {
+async function editFacultyView(req, res) {
   const { id } = req.params;
   let newFaculty = await Faculty.findOne({ _id: id });
-  res.render('faculty/faculty-create', { faculty: newFaculty });
+  res.render('faculty/faculty-edit', { faculty: newFaculty });
 }
 
 async function deleteFaculty(req, res) {
@@ -35,11 +35,19 @@ async function deleteFaculty(req, res) {
   res.render('faculty/faculty-list', { faculty: newFaculty });
 }
 
+async function editFaculty( req, res ){
+  const { id, faculty, fee, year } = req.body;
+  await Faculty.findOneAndUpdate(id, { faculty, fee, year });
+  let newFaculty = await Faculty.find();
+  res.render('faculty/faculty-list', { faculty: newFaculty });
+}
+
 module.exports = {
   getFaculties,
   getFaculty,
   createFacultyView,
   createFaculty,
-  editFaculty,
+  editFacultyView,
   deleteFaculty,
+  editFaculty,
 };

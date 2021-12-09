@@ -6,9 +6,9 @@ const {
   getProfession,
   createProfessionView,
   createProfession,
-  deleteProfession,
   editProfessionView,
   editProfession,
+  deleteProfession
 } = require('../controllers/profession-controller');
 
 router.get('/', getProfessions);
@@ -18,5 +18,7 @@ router.get('/:id', getProfession);
 router.post('/', createProfession);
 router.get('/edit/:id', editProfessionView);
 router.get('/delete/:id', deleteProfession);
+router.get('/edit/:id', editProfessionView);
+
 
 module.exports = router;

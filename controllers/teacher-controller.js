@@ -7,8 +7,8 @@ async function getTeachers(req, res) {
 
 async function getTeacher(req, res) {
   const { id } = req.params;
-  const teacher = await Teacher.findOne({ id });
-  res.render('teacher/teacher', { teacher: teacher });
+  let newTeacher = await Teacher.findOne({ _id: id });
+  res.render('teacher/teacher', { teacher: newTeacher });
 }
 
 async function createTeacherView(req, res) {
@@ -16,20 +16,23 @@ async function createTeacherView(req, res) {
 }
 
 async function createTeacher(req, res) {
-  let id = teacher.length + 1;
-  let newTeacher = req.body;
-  newTeacher.id = id;
-  teacher.push(newTeacher);
+  const { name, surname, middlename, gende, age, birthday, mobile, email } = req.body;
+  await Teacher.create({ name, surname, middlename, gende, age, birthday, mobile, email });
+  let teachers = await Teacher.find();
+  res.render('teacher/teacher-list', { teacher: teachers });
 }
 
 async function editTeacherView(req, res) {
   const { id } = req.params;
-  let teach = teacher.filter((teach) => teach.id == id);
-  res.render('teacher/teacher-edit', { teacher: teach });
+  let teacher = await Teacher.findOne({ _id: id });
+  res.render('teacher/teacher-edit', { teacher: teacher });
 }
 
 async function editTeacher(req, res) {
-  console.log(req.body);
+  const { name, surname, middlename, gende, age, birthday, mobile, email } = req.body;
+  await Teacher.findOneAndUpdate(id, { name, surname, middlename, gende, age, birthday, mobile, email });
+  const teachers = await Teacher.find();
+  res.render('teacher/teacher-list', { teacher: teachers })
 }
 
 module.exports = {

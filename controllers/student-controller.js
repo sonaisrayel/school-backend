@@ -1,6 +1,6 @@
 //const student = require("../models/student-personal.json");
 const Student = require('../models/student-model');
-const fs = require('fs');
+
 
 async function getStudents(req, res) {
   let student = await Student.find();
@@ -11,7 +11,7 @@ async function getStudent(req, res) {
   //req -  ինչ որ մեզ ուղարկվել է բրաուզերից
   // res - ինչ որ մենք ենք ուղարկում հետ
   const { id } = req.params;
-  console.log('id', id);
+
   let newStudent = await Student.findOne({ _id: id });
   res.render('student/student', { student: newStudent });
 }
@@ -23,21 +23,23 @@ async function createStudentView(req, res) {
 
 async function createStudent(req, res) {
   const { name, surname, middlename, gender, birthday, mobile, email } = req.body;
-  let student = await Student.create({ name, surname, middlename, gender, birthday, mobile, email });
+  await Student.create({ name, surname, middlename, gender, birthday, mobile, email });
   let students = await Student.find();
   res.render('student/student-list', { student: students });
 }
 
 async function editStudentView(req, res) {
   const { id } = req.params;
-  let student = Student.find({ id });
+  let student = await Student.findOne({ _id: id });
   res.render('student/student-edit', { student: student });
 }
 
-// async function editStudent(req, res) {
-//     //vercnel tvyal id-ov json-@ ev popoxel tvyalnery
-//     console.log(req.body);
-// }
+async function editStudent(req, res) {
+  const { name, surname, middlename, gender, birthday, mobile, email } = req.body;
+  await Student.findOneAndUpdate(id, {name, surname, middlename, gender, birthday, mobile, email});
+  const students = await Student.find();
+  res.render('student/student-list', {student: students});
+}
 
 module.exports = {
   getStudents,
@@ -45,5 +47,5 @@ module.exports = {
   createStudent,
   createStudentView,
   editStudentView,
-  //  editStudent
+  editStudent
 };

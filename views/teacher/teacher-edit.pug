@@ -61,7 +61,7 @@ html(lang="en")
                                 a(href="#").nav-link
                                     span(data-feather="file-text")
                                     | ՏԱՐԵՎԵՐՋԻ ԶԵՂՉԵՐ
-                form(action="/teachers/edit" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
+                form(action="/teachers" enctype="application/json"  class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" method="post")
                     .div_1
                         h4 ԱՎԵԼԱՑՆԵԼ
                         h2 ԴԱՍԱԽՈՍ
@@ -69,22 +69,22 @@ html(lang="en")
                         hr
                     .form                        
                         .div2_6
-                        input.input(type='hidden' name="id" value= teacher[0].id autocomplete='off' class='create-input')    
+                        input.input(type='hidden' name="id" value= teacher._id autocomplete='off' class='create-input')    
                     .form
                         .div1
                         label(for='') ԱՆՈՒՆ
                         .div2_1
-                        input.input(type='text' name="name" value= teacher[0].name  autocomplete='off' class='create-input')
+                        input.input(type='text' name="name" value= teacher.name  autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ԱԶԳԱՆՈՒՆ
                         .div2_2
-                        input.input(type='text' name="surname" value= teacher[0].surname autocomplete='off' class='create-input')
+                        input.input(type='text' name="surname" value= teacher.surname autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԱՅՐԱՆՈՒՆ
                         .div2_3
-                        input.input(type='text' name="middlename" value= teacher[0].middlename autocomplete='off' class='create-input')
+                        input.input(type='text' name="middlename" value= teacher.middlename autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՍԵՌ
@@ -98,17 +98,17 @@ html(lang="en")
                         .div1
                         label(for='') ԾՆ․ԱՄՍԱԹԻՎ
                         .div2_5
-                        input.input(type='text' name="birthday" value= teacher[0].birthday autocomplete='off' class='create-input')
+                        input.input(type='text' name="birthday" value= teacher.birthday autocomplete='off' class='create-input')
                     .form
                         .div1
                         label(for='') ՀԵՌԱԽՈՍ
                         .div2_6
-                        input.input(type='tel' name="mobile" value= teacher[0].mobile autocomplete='off' class='create-input')                    
+                        input.input(type='tel' name="mobile" value= teacher.mobile autocomplete='off' class='create-input')                    
                     .form
                         .div1
                         label(for='') Էլ․ՀԱՍՑԵ
                         .div2_7
-                        input.input(type='email' name="email" autocomplete='off' value= teacher[0].email class='create-input')
+                        input.input(type='email' name="email" autocomplete='off' value= teacher.email class='create-input')
 
                     br
                     .div3

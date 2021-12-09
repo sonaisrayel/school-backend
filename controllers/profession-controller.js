@@ -28,10 +28,7 @@ async function createProfession(req, res) {
   res.render('profession/profession-list', { profession: professions });
 }
 
-async function deleteProfession(req, res) {
-  const { id } = req.params;
-  let profession = profession.filter((prof) => prof.id == id);
-}
+
 
 async function editProfession(req, res) {
   const { id, profession, faculty, pay, study_year } = req.body;
@@ -39,13 +36,18 @@ async function editProfession(req, res) {
   const professions = await Profession.find();
   res.render('profession/profession-list', { profession: professions });
 }
-
+async function deleteProfession(req, res) {
+  const { id } = req.params;
+  await Profession.deleteOne({ id });
+  let newProfession = await Profession.find();
+  res.render('profession/profession-list', { profession: newProfession });
+}
 module.exports = {
   getProfessions,
   getProfession,
   createProfessionView,
   createProfession,
-  deleteProfession,
   editProfessionView,
   editProfession,
+  deleteProfession,
 };

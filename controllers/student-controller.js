@@ -1,19 +1,23 @@
 //const student = require("../models/student-personal.json");
 const Student = require('../models/student-model');
 
-
 async function getStudents(req, res) {
   let student = await Student.find();
   res.render('student/student-list', { student: student });
 }
 
 async function getStudent(req, res) {
-  //req -  ինչ որ մեզ ուղարկվել է բրաուզերից
-  // res - ինչ որ մենք ենք ուղարկում հետ
   const { id } = req.params;
-
-  let newStudent = await Student.findOne({ _id: id });
-  res.render('student/student', { student: newStudent });
+  try {
+    let newStudent = await Student.findOne({ _id: id });
+    if (newStudent) {
+      res.render('student/student', { student: newStudent });
+    } else {
+      res.send('student does not exsists');
+    }
+  } catch (error) {
+    console.log('err is: ' + error.message);
+  }
 }
 
 //Get request
@@ -36,9 +40,9 @@ async function editStudentView(req, res) {
 
 async function editStudent(req, res) {
   const { name, surname, middlename, gender, birthday, mobile, email } = req.body;
-  await Student.findOneAndUpdate(id, {name, surname, middlename, gender, birthday, mobile, email});
+  await Student.findOneAndUpdate(id, { name, surname, middlename, gender, birthday, mobile, email });
   const students = await Student.find();
-  res.render('student/student-list', {student: students});
+  res.render('student/student-list', { student: students });
 }
 
 module.exports = {
@@ -47,5 +51,5 @@ module.exports = {
   createStudent,
   createStudentView,
   editStudentView,
-  editStudent
+  editStudent,
 };

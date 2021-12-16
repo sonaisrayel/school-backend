@@ -11,13 +11,12 @@ const {
   editFaculty,
 } = require('../controllers/faculty-controller');
 
+router.get('/create', createFacultyView);
 router.get('/', getFaculties);
 router.get('/:id', getFaculty);
-router.get('/create', createFacultyView);
 router.get('/edit/:id', editFacultyView);
 router.post('/', createFaculty);
 router.post('/edit', editFaculty);
 router.get('/delete/:id', deleteFaculty);
-
 
 module.exports = router;

@@ -13,7 +13,7 @@ html(lang="en")
         
         // Bootstrap core CSS
         link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet")
-        link(rel="stylesheet" href="dashboard.css")
+
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") 
     body
         nav(class ="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0")
@@ -99,7 +99,7 @@ html(lang="en")
                                             i(class="fa fa-bars")
                                         a(type="button" class="btn btn-info" href=`/students/edit/${val._id}`)
                                             i(class="fa fa-edit")
-                                        a(type="button" class="btn btn-danger" href="#" + val._id)
+                                        a(type="button" class="btn btn-danger" href=`/students/delete/${val._id}`)
                                             i(class="fa fa-trash-o")
                                 tr
                                   

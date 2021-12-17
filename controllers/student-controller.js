@@ -45,6 +45,13 @@ async function editStudent(req, res) {
   res.render('student/student-list', { student: students });
 }
 
+async function deleteStudent(req, res) {
+  const { id } = req.params;
+  await Student.deleteOne({ _id: id });
+  let newStudent = await Student.find();
+  res.render('student/student-list', { student: newStudent });
+}
+
 module.exports = {
   getStudents,
   getStudent,
@@ -52,4 +59,5 @@ module.exports = {
   createStudentView,
   editStudentView,
   editStudent,
+  deleteStudent
 };

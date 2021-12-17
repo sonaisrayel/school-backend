@@ -7,7 +7,8 @@ const {
   createStudentView,
   getStudent,
   editStudentView,
-  editStudent
+  editStudent,
+  deleteStudent
 } = require('../controllers/student-controller');
 
 //routes
@@ -17,6 +18,7 @@ router.get('/:id', getStudent);
 router.post('/edit', editStudent);
 router.get('/edit/:id', editStudentView);
 router.get('/students/edit/:id', editStudentView);
+router.get('/delete/:id', deleteStudent);
 router.post('/', createStudent);
 //app.post('/students/edit',editStudent);
 

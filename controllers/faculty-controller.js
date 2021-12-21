@@ -29,8 +29,8 @@ async function createFaculty(req, res) {
 
 async function editFacultyView(req, res) {
   const { id } = req.params;
-  let newFaculty = await Faculty.findOne({ _id: id });
-  res.render('faculty/faculty-edit', { faculty: newFaculty });
+  let faculty = await Faculty.find({ id });
+  res.render('faculty/faculty-edit', { faculty: faculty });
 }
 
 async function deleteFaculty(req, res) {

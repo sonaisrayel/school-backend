@@ -59,5 +59,5 @@ module.exports = {
   createStudentView,
   editStudentView,
   editStudent,
-  deleteStudent
+  deleteStudent,
 };
